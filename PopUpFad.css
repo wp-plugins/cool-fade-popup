@@ -1,0 +1,38 @@
+#PopUpFad {
+	background: #FFF;
+	text-align: center;
+	font-family: Arial,sans-serif;
+	padding: 10px;
+	width: 320px;
+	border: 2px solid #666;
+	position: absolute;
+	margin: 0 auto;
+	top: 230px;
+	display: none;
+	opacity: 0;
+	KHTMLOpacity: 0;
+	filter: alpha(opacity=0); 
+	-moz-opacity: 0;
+	z-index: 1000;	
+}
+
+#PopUpFad a {
+	text-decoration: none;
+	border: none;
+	font-size: 9px;
+	color: #333;
+}
+
+#PopUpFad img {
+	border: none;
+}
+
+#PopUpFad .PopUpFadClose {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#PopUpFad.show {
+	display: block;
+}
