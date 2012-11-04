@@ -5,13 +5,15 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi.R
-Version: 5.0
+Version: 6.0
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 global $wpdb, $wp_version;
-define("WP_PopUpFad_TABLE", $wpdb->prefix . "PopUpFadpopup");
+define("WP_PopUpFad_TABLE", $wpdb->prefix . "popupfadpopup");
 
 if (!session_id()) { session_start(); }
 
@@ -20,6 +22,7 @@ function PopUpFad()
 	
 	global $wpdb;
 	$PopUpFad_Group = get_option('PopUpFad_Group');
+	$PopUpFad_Random = get_option('PopUpFad_Random');
 	
 	$sSql = "select PopUpFad_text from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
 	
@@ -28,7 +31,7 @@ function PopUpFad()
 		 $sSql = $sSql . " and PopUpFad_group='".$PopUpFad_Group."'";
 	}
 	
-	if(@$PopUpFad_random <> "")
+	if(@$PopUpFad_Random == "YES")
 	{
 		$sSql = $sSql . " Order by rand()";
 	}
@@ -282,33 +285,39 @@ function PopUpFad_widget($args)
 	
 }
 
-add_filter('the_content','PopUpFad_filter');
+add_shortcode( 'cool-fade-popup', 'PopUpFad_filter_shortcode' );
 
-function PopUpFad_filter($content){
-	return 	preg_replace_callback('/\[PopUpFad=(.*?)\]/sim','PopUpFad_filter_Callback',$content);
-}
-
-function PopUpFad_filter_Callback($matches) 
+function PopUpFad_filter_shortcode( $atts ) 
 {
 	
 	global $wpdb;
-	//PopUpFad=GROUP=widget:RANDOM=YES:SESSION=NO
+	//PopUpFad=GROUP=widget:RANDOM=YES:SESSION=NO --> Old Version
+	
+	//[cool-fade-popup group="widget" random="YES" session="NO"]
+	if ( ! is_array( $atts ) )
+	{
+		return '';
+	}
+	$PopUpFad_group = $atts['group'];
+	$PopUpFad_random = $atts['random'];
+	$PopUpFad_session = $atts['session'];
+	
 	$PopUpFad_txt = "";
-	$scode = $matches[1];
+	// $scode = $matches[1];
 	
-	$PopUpFad_group_main = "";
-	$PopUpFad_random_main = "";
-	$PopUpFad_session_main = "";
-	$PopUpFad_group_cap = "";
-	$PopUpFad_random_cap = "";
-	$PopUpFad_session_cap = "";
-	$PopUpFad_group = "";
-	$PopUpFad_group_main = "";
+	//	$PopUpFad_group_main = "";
+	//	$PopUpFad_random_main = "";
+	//	$PopUpFad_session_main = "";
+	//	$PopUpFad_group_cap = "";
+	//	$PopUpFad_random_cap = "";
+	//	$PopUpFad_session_cap = "";
+	//	$PopUpFad_group = "";
+	//	$PopUpFad_group_main = "";
 	
-	list($PopUpFad_group_main, $PopUpFad_random_main, $PopUpFad_session_main) = split("[:.-]", $scode);
-	list($PopUpFad_group_cap, $PopUpFad_group) = split('[=.-]', $PopUpFad_group_main);
-	list($PopUpFad_random_cap, $PopUpFad_random) = split('[=.-]', $PopUpFad_random_main);
-	list($PopUpFad_session_cap, $PopUpFad_session) = split('[=.-]', $PopUpFad_session_main);
+	//list($PopUpFad_group_main, $PopUpFad_random_main, $PopUpFad_session_main) = split("[:.-]", $scode);
+	//list($PopUpFad_group_cap, $PopUpFad_group) = split('[=.-]', $PopUpFad_group_main);
+	//list($PopUpFad_random_cap, $PopUpFad_random) = split('[=.-]', $PopUpFad_random_main);
+	//list($PopUpFad_session_cap, $PopUpFad_session) = split('[=.-]', $PopUpFad_session_main);
 	
 	$sSql = "select PopUpFad_text from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
 	
@@ -318,7 +327,7 @@ function PopUpFad_filter_Callback($matches)
 		 $sSql = $sSql . " and PopUpFad_group='".$PopUpFad_group."'";
 	}
 	
-	if(@$PopUpFad_random <> "")
+	if(@$PopUpFad_random == "YES")
 	{
 		$sSql = $sSql . " Order by rand()";
 	}

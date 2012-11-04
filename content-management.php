@@ -137,6 +137,7 @@
       </table>
     </form>
   </div>
+  <div style="height:5px;"></div>
   <div style="float:right;">
     <input name="text_management1" lang="text_management" class="button-primary" onClick="location.href='options-general.php?page=cool-fade-popup/content-management.php'" value="Go to - Content Management" type="button" />
     <input name="setting_management1" lang="setting_management" class="button-primary" onClick="location.href='options-general.php?page=cool-fade-popup/cool-fade-popup.php'" value="Go to - Popup Setting" type="button" />

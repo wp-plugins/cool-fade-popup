@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 2.8
-Tested up to: 3.4.1
-Stable tag: 5.0
+Tested up to: 3.4.2
+Stable tag: 6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -94,7 +94,12 @@ Tested upto 3.3
 = 5.0 =
 
 Tested up to 3.4.1
-New demo link, www.gopiplus.com
+New demo link, http://www.gopiplus.com
+
+= 6.0 =
+
+Tested up to 3.4.2
+Slight change in the short code, Please find the new short code for your popup
 
 == Upgrade Notice ==
 
@@ -117,4 +122,9 @@ Tested upto 3.3
 = 5.0 =
 
 Tested up to 3.4.1
-New demo link, www.gopiplus.com
+New demo link, http://www.gopiplus.com
+
+= 6.0 =
+
+Tested up to 3.4.2
+Slight change in the short code, Please find the new short code for your popup
