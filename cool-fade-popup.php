@@ -5,7 +5,7 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi.R
-Version: 6.0
+Version: 6.1
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
@@ -303,21 +303,6 @@ function PopUpFad_filter_shortcode( $atts )
 	$PopUpFad_session = $atts['session'];
 	
 	$PopUpFad_txt = "";
-	// $scode = $matches[1];
-	
-	//	$PopUpFad_group_main = "";
-	//	$PopUpFad_random_main = "";
-	//	$PopUpFad_session_main = "";
-	//	$PopUpFad_group_cap = "";
-	//	$PopUpFad_random_cap = "";
-	//	$PopUpFad_session_cap = "";
-	//	$PopUpFad_group = "";
-	//	$PopUpFad_group_main = "";
-	
-	//list($PopUpFad_group_main, $PopUpFad_random_main, $PopUpFad_session_main) = split("[:.-]", $scode);
-	//list($PopUpFad_group_cap, $PopUpFad_group) = split('[=.-]', $PopUpFad_group_main);
-	//list($PopUpFad_random_cap, $PopUpFad_random) = split('[=.-]', $PopUpFad_random_main);
-	//list($PopUpFad_session_cap, $PopUpFad_session) = split('[=.-]', $PopUpFad_session_main);
 	
 	$sSql = "select PopUpFad_text from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
 	
