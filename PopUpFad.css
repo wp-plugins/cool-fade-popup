@@ -1,9 +1,9 @@
 #PopUpFad {
 	background: #FFF;
-	text-align: center;
+	text-align: left;
 	font-family: Arial,sans-serif;
 	padding: 10px;
-	width: 320px;
+	width: 380px;
 	border: 2px solid #666;
 	position: absolute;
 	margin: 0 auto;

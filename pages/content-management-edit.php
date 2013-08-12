@@ -56,6 +56,7 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 
 	$form['PopUpFad_status'] = isset($_POST['PopUpFad_status']) ? $_POST['PopUpFad_status'] : '';
 	$form['PopUpFad_group'] = isset($_POST['PopUpFad_group']) ? $_POST['PopUpFad_group'] : '';
+	$form['PopUpFad_extra1'] = isset($_POST['PopUpFad_extra1']) ? $_POST['PopUpFad_extra1'] : '';
 
 	//	No errors found, we can add this Group to the table
 	if ($PopUpFad_error_found == FALSE)
@@ -64,10 +65,11 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 				"UPDATE `".WP_PopUpFad_TABLE."`
 				SET `PopUpFad_text` = %s,
 				`PopUpFad_status` = %s,
-				`PopUpFad_group` = %s
+				`PopUpFad_group` = %s,
+				`PopUpFad_extra1` = %s
 				WHERE PopUpFad_id = %d
 				LIMIT 1",
-				array($form['PopUpFad_text'], $form['PopUpFad_status'], $form['PopUpFad_group'], $did)
+				array($form['PopUpFad_text'], $form['PopUpFad_status'], $form['PopUpFad_group'], $form['PopUpFad_extra1'], $did)
 			);
 		$wpdb->query($sSql);
 		
@@ -87,7 +89,7 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 {
 ?>
   <div class="updated fade">
-    <p><strong><?php echo $PopUpFad_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/admin.php?page=cool-fade-popup">Click here</a> to view the details</strong></p>
+    <p><strong><?php echo $PopUpFad_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup">Click here</a> to view the details</strong></p>
   </div>
   <?php
 }
@@ -142,12 +144,26 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
         <option value='NO' <?php if($form['PopUpFad_status']=='NO') { echo 'selected="selected"' ; } ?>>No</option>
       </select>
       <p>Do you want to show this message into the popup window</p>
+	  
+	  <label for="tag-display-status">Popup timeout</label>
+	  <select name="PopUpFad_extra1" id="PopUpFad_extra1">
+		<option value='1000' <?php if($form['PopUpFad_extra1']=='1000') { echo 'selected="selected"' ; } ?>>1 Second</option>
+        <option value='2000' <?php if($form['PopUpFad_extra1']=='2000') { echo 'selected="selected"' ; } ?>>2 Seconds</option>
+		<option value='3000' <?php if($form['PopUpFad_extra1']=='3000') { echo 'selected="selected"' ; } ?>>3 Seconds</option>
+		<option value='4000' <?php if($form['PopUpFad_extra1']=='4000') { echo 'selected="selected"' ; } ?>>4 Seconds</option>
+		<option value='6000' <?php if($form['PopUpFad_extra1']=='6000') { echo 'selected="selected"' ; } ?>>6 Seconds</option>
+		<option value='8000' <?php if($form['PopUpFad_extra1']=='8000') { echo 'selected="selected"' ; } ?>>8 Seconds</option>
+		<option value='10000' <?php if($form['PopUpFad_extra1']=='10000') { echo 'selected="selected"' ; } ?>>10 Seconds</option>
+		<option value='12000' <?php if($form['PopUpFad_extra1']=='12000') { echo 'selected="selected"' ; } ?>>12 Seconds</option>
+      </select>
+	  <p>Please select your popup timeout.</p>
+	  
       <input name="PopUpFad_id" id="PopUpFad_id" type="hidden" value="">
       <input type="hidden" name="PopUpFad_form_submit" value="yes"/>
       <p class="submit">
-        <input name="publish" lang="publish" class="button-primary" value="Update Details" type="submit" />
-        <input name="publish" lang="publish" class="button-primary" onclick="_PopUpFad_redirect()" value="Cancel" type="button" />
-        <input name="Help" lang="publish" class="button-primary" onclick="PopUpFad_help()" value="Help" type="button" />
+        <input name="publish" lang="publish" class="button" value="Update Details" type="submit" />
+        <input name="publish" lang="publish" class="button" onclick="_PopUpFad_redirect()" value="Cancel" type="button" />
+        <input name="Help" lang="publish" class="button" onclick="PopUpFad_help()" value="Help" type="button" />
       </p>
 	  <?php wp_nonce_field('PopUpFad_form_edit'); ?>
     </form>

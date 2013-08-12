@@ -1,12 +1,11 @@
 /*
 ##########################################################################################################
-###### Project   : Cool fade popup  																######
+###### Project   : Cool fade popup wordpress plugin 												######
 ###### File Name : content-management.php                   										######
 ###### Author    : Gopi.R (http://www.gopiplus.com/work/)                        					######
 ###### Link      : http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/    						######
 ##########################################################################################################
 */
-
 
 function PopUpFad_submit()
 {

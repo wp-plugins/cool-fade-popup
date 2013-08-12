@@ -5,7 +5,7 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi.R
-Version: 7.0
+Version: 7.1
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
@@ -23,19 +23,21 @@ if (!session_id()) { session_start(); }
 
 function PopUpFad()
 {
-	
 	global $wpdb;
+	$PopUpFad_Group = "";
+	$PopUpFad_Random = "";
+	$PopUpFad_Timeout = 1000;
 	$PopUpFad_Group = get_option('PopUpFad_Group');
 	$PopUpFad_Random = get_option('PopUpFad_Random');
 	
-	$sSql = "select PopUpFad_text from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
+	$sSql = "select PopUpFad_text,PopUpFad_extra1 from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
 	
-	if(@$PopUpFad_Group <> "")
+	if($PopUpFad_Group <> "")
 	{
 		 $sSql = $sSql . " and PopUpFad_group='".$PopUpFad_Group."'";
 	}
 	
-	if(@$PopUpFad_Random == "YES")
+	if($PopUpFad_Random == "YES")
 	{
 		$sSql = $sSql . " Order by rand()";
 	}
@@ -49,6 +51,15 @@ function PopUpFad()
 		foreach ( $data as $data ) 
 		{
 			$PopUpData = stripslashes($data->PopUpFad_text);
+			$PopUpFad_Timeout = $data->PopUpFad_extra1;
+			if($PopUpFad_Timeout <> "")
+			{
+				$PopUpFad_Timeout = intval($PopUpFad_Timeout);
+			}
+			else if($PopUpFad_Timeout == "")
+			{
+				$PopUpFad_Timeout = 0;
+			}
 		}
 	}
 	else
@@ -56,10 +67,17 @@ function PopUpFad()
 		$PopUpData = "No content available in the db with the group name " . $PopUpFad_group . ". Please check the plugin page or in the admin to find more info.";
 	}
 	
-	
 	$PopUpFad_siteurl = get_option('siteurl');
 	$PopUpFad_pluginurl = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/";
 	$PopUpFad_close = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/close.jpg";
+	if(!is_numeric($PopUpFad_Timeout)) 
+	{ 
+		$PopUpFad_Timeout = 3000;
+	}
+	elseif($PopUpFad_Timeout == 0)
+	{
+		$PopUpFad_Timeout = 10000;
+	}
 	?>
 	<script type="text/javascript" src="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.css" />
@@ -69,40 +87,25 @@ function PopUpFad()
   		<?php echo $PopUpData; ?>
         </div>
 	</div>
-	<script type="text/javascript">PopUpFadOpen();</script>
+	<script type="text/javascript">
+	setTimeout('PopUpFadOpen()', <?php echo $PopUpFad_Timeout; ?>);
+	</script>
 	<?php
 }
 
 
 function PopUpFad_activation()
 {
-	
 	global $wpdb;
-	
 	$c1 = '<div>';
-	$c1 = $c1.'<h2 align="left">Cool fading popup demo</h2><br />';
+	$c1 = $c1.'<strong>Cool fading popup demo</strong><br />';
 	$c1 = $c1.'<p align="left"><img style="margin: 5px;text-align:left;float:left;" title="gopiplus" src="http://www.gopiplus.com/work/wp-content/uploads/pluginimages/img/gopiplus.com-popup.png" alt="gopiplus" />This is the demo for cool fade popup plugin. using this plugin you can add this cool popup window into your wordpress website. using this unblockable popup window  you can add your ads, special information, offers and announcements. Close this popup and read the article you can easily configure this plugin in your wordpress website. its very simple. please feel free to post you comments and feedback.</p>';
-	$c1 = $c1.'</p>';
 	$c1 = $c1.'</div>';
 	
 	$c2 = '<div>';
-	$c2 = $c2.'<h2 align="left">Cool fading popup plugin</h2><br />';
+	$c2 = $c2.'<strong>Cool fading popup plugin</strong><br />';
 	$c2 = $c2.'<p align="left"><img style="margin: 5px;text-align:left;float:left;" title="gopiplus" src="http://www.gopiplus.com/work/wp-content/uploads/pluginimages/img/gopiplus.com-popup.png" alt="gopiplus" />This is the demo for cool fade popup plugin. using this plugin you can add this cool popup window into your wordpress website. using this unblockable popup window  you can add your ads, special information, offers and announcements. Close this popup and read the article you can easily configure this plugin in your wordpress website. its very simple. please feel free to post you comments and feedback.</p>';
-	$c2 = $c2.'</p>';
 	$c2 = $c2.'</div>';
-	
-	$c3 = '<div>';
-	$c3 = $c3.'<h2 align="left">Cool fading popup plugin</h2>';
-	$c3 = $c3.'<p align="left"><img style="margin: 5px;text-align:left;float:left;" title="gopiplus" src="http://www.gopiplus.com/work/wp-content/uploads/pluginimages/img/gopiplus.com-popup.png" alt="gopiplus" />Dit is de demo voor koele fade popup plugin. het gebruik van deze plugin kunt u deze toevoegen coole pop-up venster in uw WordPress website. het gebruik van deze blokkeerbaar popup-venster kunt u uw advertenties, speciale informatie, aanbiedingen en aankondigingen. Sluit deze popup en lees het artikel kunt u eenvoudig configureren van deze plugin in je WordPress website. zijn zeer eenvoudig. Aarzel niet om bericht dat u opmerkingen en feedback.</p>';
-	$c3 = $c3.'</p>';
-	$c3 = $c3.'</div>';
-	
-	$c4 = '<div>';
-	$c4 = $c4.'<h2 align="left">Cool fading popup plugin</h2>';
-	$c4 = $c4.'<p align="left"><img style="margin: 5px;text-align:left;float:left;" title="gopiplus" src="http://www.gopiplus.com/work/wp-content/uploads/pluginimages/img/gopiplus.com-popup.png" alt="gopiplus" />Il sagit de la démo pour popup cool fade plugin. lutilisation de ce plugin, vous pouvez ajouter cette fenêtre popup cool dans votre site wordpress. utilisation de cette fenêtre popup imblocable vous pouvez ajouter vos annonces, informations spéciales, des offres et des annonces. Fermer cette popup et lire larticle, vous pouvez facilement configurer ce plugin dans votre site wordpress. son très simple. sil vous plaît nhésitez pas à poster vos commentaires et la rétroaction.</p>';
-	$c4 = $c4.'</p>';
-	$c4 = $c4.'</div>';
-	
 	
 	if($wpdb->get_var("show tables like '". WP_PopUpFad_TABLE . "'") != WP_PopUpFad_TABLE) 
 	{
@@ -122,10 +125,6 @@ function PopUpFad_activation()
 		$wpdb->query($sSql);
 		$sSql = $iIns . " VALUES ('$c2', 'YES', 'SAMPLE', '0000-00-00 00:00:00');";
 		$wpdb->query($sSql);
-		//$sSql = $iIns . " VALUES ('$c3', 'YES', 'SAMPLE', '0000-00-00 00:00:00');";
-		//$wpdb->query($sSql);
-		//$sSql = $iIns . " VALUES ('$c4', 'YES', 'WIDGET', '0000-00-00 00:00:00');";
-		//$wpdb->query($sSql);
 	}
 	
 	add_option('PopUpFad_Title', "Cool fade popup");
@@ -147,7 +146,6 @@ function PopUpFad_deactivate()
 function PopUpFad_add_to_menu() 
 {
 	add_options_page('Cool fade popup', 'Cool fade popup', 'manage_options', 'cool-fade-popup', 'PopUpFad_admin_options' );
-	//add_options_page('Cool fade popup', '', 'manage_options', "cool-fade-popup/content-management.php",'' );
 }
 
 if (is_admin()) 
@@ -228,12 +226,25 @@ function PopUpFad_widget($args)
 
 add_shortcode( 'cool-fade-popup', 'PopUpFad_filter_shortcode' );
 
+function PopUpFadeNew( $group = "", $random = "", $session = "" )
+{
+	$ArrInput = array();
+	$ArrInput["group"] = $group;
+	$ArrInput["random"] = $random;
+	$ArrInput["session"] = $session;
+	echo PopUpFad_filter_shortcode( $ArrInput );
+}
+
 function PopUpFad_filter_shortcode( $atts ) 
 {
-	
 	global $wpdb;
 	//PopUpFad=GROUP=widget:RANDOM=YES:SESSION=NO --> Old Version
 	
+	$PopUpFad_txt = "";
+	$PopUpFad_group = "";
+	$PopUpFad_random = "";
+	$PopUpFad_session = "";
+	$PopUpFad_Timeout = 1000;
 	//[cool-fade-popup group="widget" random="YES" session="NO"]
 	if ( ! is_array( $atts ) )
 	{
@@ -243,17 +254,14 @@ function PopUpFad_filter_shortcode( $atts )
 	$PopUpFad_random = $atts['random'];
 	$PopUpFad_session = $atts['session'];
 	
-	$PopUpFad_txt = "";
+	$sSql = "select PopUpFad_text,PopUpFad_extra1 from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
 	
-	$sSql = "select PopUpFad_text from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
-	
-	
-	if(@$PopUpFad_group <> "")
+	if($PopUpFad_group <> "")
 	{
 		 $sSql = $sSql . " and PopUpFad_group='".$PopUpFad_group."'";
 	}
 	
-	if(@$PopUpFad_random == "YES")
+	if($PopUpFad_random == "YES")
 	{
 		$sSql = $sSql . " Order by rand()";
 	}
@@ -267,6 +275,15 @@ function PopUpFad_filter_shortcode( $atts )
 		foreach ( $data as $data ) 
 		{
 			$PopUpData = stripslashes($data->PopUpFad_text);
+			$PopUpFad_Timeout = $data->PopUpFad_extra1;
+			if($PopUpFad_Timeout <> "")
+			{
+				$PopUpFad_Timeout = intval($PopUpFad_Timeout);
+			}
+			else if($PopUpFad_Timeout == "")
+			{
+				$PopUpFad_Timeout = 0;
+			}
 		}
 	}
 	else
@@ -274,7 +291,15 @@ function PopUpFad_filter_shortcode( $atts )
 		$PopUpData = "No content available in the db with the group name " . $PopUpFad_group . ". Please check the plugin page or in the admin to find more info.";
 	}
 	
-
+	if(!is_numeric($PopUpFad_Timeout)) 
+	{ 
+		$PopUpFad_Timeout = 3000;
+	}
+	elseif($PopUpFad_Timeout == 0)
+	{
+		$PopUpFad_Timeout = 10000;
+	}
+	
 	$PopUpFad_siteurl = get_option('siteurl');
 	$PopUpFad_pluginurl = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/";
 	$PopUpFad_close = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/close.jpg";
@@ -287,10 +312,11 @@ function PopUpFad_filter_shortcode( $atts )
 				$PopUpFad_txt = $PopUpFad_txt . $PopUpData;
 			$PopUpFad_txt = $PopUpFad_txt . '</div>';
 		$PopUpFad_txt = $PopUpFad_txt . '</div>';
-	$PopUpFad_txt = $PopUpFad_txt . '<script type="text/javascript">PopUpFadOpen();</script>';
+	$PopUpFad_txt = $PopUpFad_txt . '<script type="text/javascript">';
+	$PopUpFad_txt = $PopUpFad_txt." setTimeout('PopUpFadOpen()', ".$PopUpFad_Timeout.");";
+	$PopUpFad_txt = $PopUpFad_txt.'</script>';
 	
-	
-	if(@$PopUpFad_session == "NO")
+	if($PopUpFad_session == "NO")
 	{
 		return $PopUpFad_txt;
 	}

@@ -117,11 +117,10 @@
       <input name="PopUpFad_Random" id="PopUpFad_Random" type="text" value="<?php echo $PopUpFad_Random; ?>" maxlength="3" />
       <p>Enter YES (or) NO, This is to display popup message randomly</p>
 	  
-	  
       <br />
-	  <input name="PopUpFad_submit" id="PopUpFad_submit" class="button-primary" value="Submit" type="submit" />
-	  <input name="publish" lang="publish" class="button-primary" onclick="_PopUpFad_redirect()" value="Cancel" type="button" />
-      <input name="Help" lang="publish" class="button-primary" onclick="PopUpFad_help()" value="Help" type="button" />
+	  <input name="PopUpFad_submit" id="PopUpFad_submit" class="button" value="Submit" type="submit" />
+	  <input name="publish" lang="publish" class="button" onclick="_PopUpFad_redirect()" value="Cancel" type="button" />
+      <input name="Help" lang="publish" class="button" onclick="PopUpFad_help()" value="Help" type="button" />
 	  <?php wp_nonce_field('PopUpFad_form_setting'); ?>
     </form>
   </div>

@@ -6,7 +6,7 @@ Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
 Tested up to: 3.6
-Stable tag: 7.0
+Stable tag: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -111,6 +111,11 @@ Tested up to 3.6
 Added some security feature.
 New admin look.
 
+= 7.1 =
+
+Option to set popup timeout. (i.e. Show popup window based on timeout after page load)
+Paging option in admin. If you have more then 10 popup messages, you will get the paging.
+
 == Upgrade Notice ==
 
 = 1.0 = 								
@@ -148,3 +153,8 @@ Tested up to 3.5
 Tested up to 3.6
 Added some security feature.
 New admin look.
+
+= 7.1 =
+
+Option to set popup timeout. (i.e. Show popup window based on timeout after page load)
+Paging option in admin. If you have more then 10 popup messages, you will get the paging.
