@@ -76,7 +76,7 @@ function PopUpFad()
 	}
 	elseif($PopUpFad_Timeout == 0)
 	{
-		$PopUpFad_Timeout = 10000;
+		$PopUpFad_Timeout = 3000;
 	}
 	?>
 	<script type="text/javascript" src="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.js"></script>
@@ -297,7 +297,7 @@ function PopUpFad_filter_shortcode( $atts )
 	}
 	elseif($PopUpFad_Timeout == 0)
 	{
-		$PopUpFad_Timeout = 10000;
+		$PopUpFad_Timeout = 3000;
 	}
 	
 	$PopUpFad_siteurl = get_option('siteurl');
