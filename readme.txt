@@ -6,7 +6,7 @@ Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
 Tested up to: 3.6
-Stable tag: 7.1
+Stable tag: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -21,7 +21,8 @@ Check official website for live demo [http://www.gopiplus.com/work/2011/01/08/co
 [Comments/Suggestion](http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/)		
 [About author](http://www.gopiplus.com/work/)			
 
-Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
+Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. 
+Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 	
 This popup ads are very effective advertising tools for your website since they won’t get automatically blocked by popup blocking tool.
 
@@ -30,6 +31,7 @@ This popup ads are very effective advertising tools for your website since they 
 *   Unblockable.
 *   Session option to show the popup only first time.
 *   Option to display random content.
+*   Supports localization.
 
 http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 
@@ -81,11 +83,14 @@ First version.
 
 = 2.0 =
 
-The user raised problem "After closed the popup; not able to click the links under the popup" is solved in this version. Please take backup of your all popup HTML files before update to new version.
+The user raised problem "After closed the popup; not able to click the links under the popup" is solved in this version. 
+Please take backup of your all popup HTML files before update to new version.
 
 = 3.0 =			
 
-This version is completely different from version 2.0. please take your existing HTML files for backup. In this version separate content management page is available for popup content. We can add the N number of content in to db and can display one at a time with random option.
+This version is completely different from version 2.0. please take your existing HTML files for backup. 
+In this version separate content management page is available for popup content. 
+We can add the N number of content in to db and can display one at a time with random option.
 
 = 4.0 =	
 
@@ -115,6 +120,14 @@ New admin look.
 
 Option to set popup timeout. (i.e. Show popup window based on timeout after page load)
 Paging option in admin. If you have more then 10 popup messages, you will get the paging.
+
+= 8.0 =
+
+1. Bug in widget setting page has been fixed.
+2. Plugin tested on wordpress 3.8
+3. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (cool-fade-popup.po) available in the languages folder. Translators Welcome.
+4. Fixed all warning messages
 
 == Upgrade Notice ==
 
@@ -124,11 +137,14 @@ First version.
 
 = 2.0 =
 
-The user raised problem "After closed the popup; not able to click the links under the popup" is solved in this version. Please take backup of your all popup HTML files before update to new version.
+The user raised problem "After closed the popup; not able to click the links under the popup" is solved in this version. 
+Please take backup of your all popup HTML files before update to new version.
 
 = 3.0 =			
 
-This version is completely different from version 2.0. please take your existing HTML files for backup. In this version separate content management page is available for popup content. We can add the N number of content in to db and can display one at a time with random option.
+This version is completely different from version 2.0. please take your existing HTML files for backup. 
+In this version separate content management page is available for popup content. 
+We can add the N number of content in to db and can display one at a time with random option.
 
 = 4.0 =	
 
@@ -158,3 +174,11 @@ New admin look.
 
 Option to set popup timeout. (i.e. Show popup window based on timeout after page load)
 Paging option in admin. If you have more then 10 popup messages, you will get the paging.
+
+= 8.0 =
+
+1. Bug in widget setting page has been fixed.
+2. Plugin tested on wordpress 3.8
+3. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (cool-fade-popup.po) available in the languages folder. Translators Welcome.
+4. Fixed all warning messages

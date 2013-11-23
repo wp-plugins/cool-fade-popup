@@ -13,7 +13,7 @@ $result = $wpdb->get_var($sSql);
 
 if ($result != '1')
 {
-	?><div class="error fade"><p><strong>Oops, selected details doesn't exist.</strong></p></div><?php
+	?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'cool-fade-popup'); ?></strong></p></div><?php
 }
 else
 {
@@ -50,7 +50,7 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 	$form['PopUpFad_text'] = isset($_POST['PopUpFad_text']) ? $_POST['PopUpFad_text'] : '';
 	if ($form['PopUpFad_text'] == '')
 	{
-		$PopUpFad_errors[] = __('Please enter the popup message.', WP_PopUpFad_UNIQUE_NAME);
+		$PopUpFad_errors[] = __('Please enter the popup message.', 'cool-fade-popup');
 		$PopUpFad_error_found = TRUE;
 	}
 
@@ -73,7 +73,7 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 			);
 		$wpdb->query($sSql);
 		
-		$PopUpFad_success = 'Details was successfully updated.';
+		$PopUpFad_success = __('Details was successfully updated.', 'cool-fade-popup');
 	}
 }
 
@@ -89,7 +89,9 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 {
 ?>
   <div class="updated fade">
-    <p><strong><?php echo $PopUpFad_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup">Click here</a> to view the details</strong></p>
+    <p><strong><?php echo $PopUpFad_success; ?> 
+	<a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup"><?php _e('Click here', 'cool-fade-popup'); ?></a>
+	<?php _e(' to view the details', 'cool-fade-popup'); ?></strong></p>
   </div>
   <?php
 }
@@ -97,19 +99,20 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 <script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/cool-fade-popup/pages/setting.js"></script>
 <div class="form-wrap">
 	<div id="icon-edit" class="icon32 icon32-posts-post"><br></div>
-	<h2><?php echo WP_PopUpFad_TITLE; ?></h2>
+	<h2><?php _e('Cool fade popup', 'cool-fade-popup'); ?></h2>
 	<form name="PopUpFad_form" method="post" action="#" onsubmit="return PopUpFad_submit()"  >
-      <h3>Update popup details</h3>
-	  <label for="tag-image">Enter the popup message</label>
+      <h3><?php _e('Update popup details', 'cool-fade-popup'); ?></h3>
+	  <label for="tag-image"><?php _e('Enter the popup message', 'cool-fade-popup'); ?></label>
       <textarea name="PopUpFad_text" id="PopUpFad_text" cols="130" rows="9"><?php echo esc_html(stripslashes($form['PopUpFad_text'])); ?></textarea>
-      <p>We Can enter HTML content also</p>
-      <label for="tag-select-gallery-group">Select popup group</label>
+      <p><?php _e('We Can enter HTML content also', 'cool-fade-popup'); ?></p>
+      <label for="tag-select-gallery-group"><?php _e('Select popup group', 'cool-fade-popup'); ?></label>
       <select name="PopUpFad_group" id="PopUpFad_group">
 	  <option value='Select'>Select</option>
 	  <?php
 		$sSql = "SELECT distinct(PopUpFad_group) as PopUpFad_group FROM `".WP_PopUpFad_TABLE."` order by PopUpFad_group";
 		$myDistinctData = array();
 		$arrDistinctDatas = array();
+		$selected = "";
 		$myDistinctData = $wpdb->get_results($sSql, ARRAY_A);
 		$i = 0;
 		foreach ($myDistinctData as $DistinctData)
@@ -136,16 +139,16 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 		}
 		?>
       </select>
-      <p>This is to group the popup message. Select your popup group. </p>
-      <label for="tag-display-status">Display status</label>
+      <p><?php _e('This is to group the popup message. Select your popup group.', 'cool-fade-popup'); ?></p>
+      <label for="tag-display-status"><?php _e('Display status', 'cool-fade-popup'); ?></label>
       <select name="PopUpFad_status" id="PopUpFad_status">
         <option value='Select'>Select</option>
 		<option value='YES' <?php if($form['PopUpFad_status']=='YES') { echo 'selected="selected"' ; } ?>>Yes</option>
         <option value='NO' <?php if($form['PopUpFad_status']=='NO') { echo 'selected="selected"' ; } ?>>No</option>
       </select>
-      <p>Do you want to show this message into the popup window</p>
+      <p><?php _e('Do you want to show this message into the popup window', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-display-status">Popup timeout</label>
+	  <label for="tag-display-status"><?php _e('Popup timeout', 'cool-fade-popup'); ?></label>
 	  <select name="PopUpFad_extra1" id="PopUpFad_extra1">
 		<option value='1000' <?php if($form['PopUpFad_extra1']=='1000') { echo 'selected="selected"' ; } ?>>1 Second</option>
         <option value='2000' <?php if($form['PopUpFad_extra1']=='2000') { echo 'selected="selected"' ; } ?>>2 Seconds</option>
@@ -156,17 +159,20 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 		<option value='10000' <?php if($form['PopUpFad_extra1']=='10000') { echo 'selected="selected"' ; } ?>>10 Seconds</option>
 		<option value='12000' <?php if($form['PopUpFad_extra1']=='12000') { echo 'selected="selected"' ; } ?>>12 Seconds</option>
       </select>
-	  <p>Please select your popup timeout.</p>
+	  <p><?php _e('Please select your popup timeout.', 'cool-fade-popup'); ?></p>
 	  
       <input name="PopUpFad_id" id="PopUpFad_id" type="hidden" value="">
       <input type="hidden" name="PopUpFad_form_submit" value="yes"/>
       <p class="submit">
-        <input name="publish" lang="publish" class="button" value="Update Details" type="submit" />
-        <input name="publish" lang="publish" class="button" onclick="_PopUpFad_redirect()" value="Cancel" type="button" />
-        <input name="Help" lang="publish" class="button" onclick="PopUpFad_help()" value="Help" type="button" />
+        <input name="publish" lang="publish" class="button" value="<?php _e('Update Details', 'cool-fade-popup'); ?>" type="submit" />
+        <input name="publish" lang="publish" class="button" onclick="_PopUpFad_redirect()" value="<?php _e('Cancel', 'cool-fade-popup'); ?>" type="button" />
+        <input name="Help" lang="publish" class="button" onclick="PopUpFad_help()" value="<?php _e('Help', 'cool-fade-popup'); ?>" type="button" />
       </p>
 	  <?php wp_nonce_field('PopUpFad_form_edit'); ?>
     </form>
 </div>
-<p class="description"><?php echo WP_PopUpFad_LINK; ?></p>
+<p class="description">
+	<?php _e('Check official website for more information', 'cool-fade-popup'); ?>
+	<a target="_blank" href="<?php echo WP_PopUpFad_FAV; ?>"><?php _e('click here', 'cool-fade-popup'); ?></a>
+</p>
 </div>

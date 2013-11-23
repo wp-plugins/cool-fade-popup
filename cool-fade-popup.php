@@ -5,7 +5,7 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi.R
-Version: 7.1
+Version: 8.0
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
@@ -14,9 +14,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("WP_PopUpFad_TABLE", $wpdb->prefix . "popupfadpopup");
-define("WP_PopUpFad_UNIQUE_NAME", "PopUpFad");
-define("WP_PopUpFad_TITLE", "Cool fade popup");
-define('WP_PopUpFad_LINK', 'Check official website for more information <a target="_blank" href="http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/">click here</a>');
 define('WP_PopUpFad_FAV', 'http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/');
 
 if (!session_id()) { session_start(); }
@@ -145,7 +142,7 @@ function PopUpFad_deactivate()
 
 function PopUpFad_add_to_menu() 
 {
-	add_options_page('Cool fade popup', 'Cool fade popup', 'manage_options', 'cool-fade-popup', 'PopUpFad_admin_options' );
+	add_options_page(__('Cool fade popup', 'cool-fade-popup'), __('Cool fade popup', 'cool-fade-popup'), 'manage_options', 'cool-fade-popup', 'PopUpFad_admin_options' );
 }
 
 if (is_admin()) 
@@ -189,13 +186,17 @@ function PopUpFad_plugins_loaded()
 
 function PopUpFad_widget_control() 
 {
-	echo '<p>To change the setting goto <b>Cool fade popup</b> link under Settings menu.';
-  	echo '<a href="options-general.php?page=cool-fade-popup">click here</a></p>';
-	echo WP_PopUpFad_LINK;
+	echo '<br />';
+	_e('Cool fade popup', 'cool-fade-popup');
+	echo '.&nbsp;';
+	_e('Check official website for more information', 'cool-fade-popup');
+	?>&nbsp;<a target="_blank" href="<?php echo WP_PopUpFad_FAV; ?>"><?php _e('click here', 'cool-fade-popup'); ?></a><br /><br /><?php
+	
 }
 
 function PopUpFad_widget($args) 
 {
+	$display = "";
 	if(is_home() && get_option('PopUpFad_On_Homepage') == 'YES') {	$display = "show";	}
 	if(is_single() && get_option('PopUpFad_On_Posts') == 'YES') {	$display = "show";	}
 	if(is_page() && get_option('PopUpFad_On_Pages') == 'YES') {	$display = "show";	}
@@ -213,7 +214,7 @@ function PopUpFad_widget($args)
 	}
 	else
 	{
-		if ( $_SESSION['PopUpFad_Session'] <> "YES" )
+		if ( isset($_SESSION['PopUpFad_Session']) <> "YES" )
 		{
 			$_SESSION['PopUpFad_Session'] = "YES"; 
 			if($display == "show")
@@ -222,6 +223,7 @@ function PopUpFad_widget($args)
 			}
 		}
 	}
+	
 }
 
 add_shortcode( 'cool-fade-popup', 'PopUpFad_filter_shortcode' );
@@ -322,7 +324,7 @@ function PopUpFad_filter_shortcode( $atts )
 	}
 	else
 	{
-		if ( $_SESSION['PopUpFad_Session'] <> "YES" )
+		if ( isset($_SESSION['PopUpFad_Session']) <> "YES" )
 		{
 			$_SESSION['PopUpFad_Session'] = "YES"; 
 			return $PopUpFad_txt;
@@ -330,6 +332,12 @@ function PopUpFad_filter_shortcode( $atts )
 	}
 }
 
+function PopUpFad_textdomain() 
+{
+	  load_plugin_textdomain( 'cool-fade-popup', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'PopUpFad_textdomain');
 register_activation_hook(__FILE__, 'PopUpFad_activation');
 add_action('admin_menu', 'PopUpFad_add_to_menu');
 add_action("plugins_loaded", "PopUpFad_plugins_loaded");

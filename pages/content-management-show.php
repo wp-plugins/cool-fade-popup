@@ -18,7 +18,7 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
 	
 	if ($result != '1')
 	{
-		?><div class="error fade"><p><strong>Oops, selected details doesn't exist (1).</strong></p></div><?php
+		?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'cool-fade-popup'); ?></strong></p></div><?php
 	}
 	else
 	{
@@ -36,7 +36,7 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
 			
 			//	Set success message
 			$PopUpFad_success_msg = TRUE;
-			$PopUpFad_success = __('Selected record was successfully deleted.', WP_PopUpFad_UNIQUE_NAME);
+			$PopUpFad_success = __('Selected record was successfully deleted.', 'cool-fade-popup');
 		}
 	}
 	
@@ -48,7 +48,8 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
 ?>
 <div class="wrap">
   <div id="icon-edit" class="icon32 icon32-posts-post"></div>
-    <h2><?php echo WP_PopUpFad_TITLE; ?><a class="add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=add">Add New</a></h2>
+    <h2><?php _e('Cool fade popup', 'cool-fade-popup'); ?>
+	<a class="add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=add"><?php _e('Add New', 'cool-fade-popup'); ?></a></h2>
     <div class="tool-box">
 	<?php
 		$pagenum = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
@@ -69,17 +70,17 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
         <thead>
           <tr>
             <th width="3%" class="check-column" scope="col"><input type="checkbox" name="PopUpFad_group_item[]" /></th>
-			<th width="72%" scope="col">Popup Content</th>
-            <th width="16%" scope="col">Popup Group</th>
-			<th width="9%" scope="col">Display Status</th>
+			<th width="72%" scope="col"><?php _e('Popup Content', 'cool-fade-popup'); ?></th>
+            <th width="16%" scope="col"><?php _e('Popup Group', 'cool-fade-popup'); ?></th>
+			<th width="9%" scope="col"><?php _e('Display', 'cool-fade-popup'); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="PopUpFad_group_item[]" /></th>
-			<th scope="col">Popup Content</th>
-            <th scope="col">Popup Group</th>
-			<th scope="col">Display Status</th>
+			<th scope="col"><?php _e('Popup Content', 'cool-fade-popup'); ?></th>
+            <th scope="col"><?php _e('Popup Group', 'cool-fade-popup'); ?></th>
+			<th scope="col"><?php _e('Display', 'cool-fade-popup'); ?></th>
           </tr>
         </tfoot>
 		<tbody>
@@ -87,27 +88,30 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
 			$i = 0;
 			if(count($myData) > 0 )
 			{
-				foreach ($myData as $data)
-				{
-					?>
-					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['PopUpFad_id']; ?>" name="PopUpFad_group_item[]"></td>
-						<td><?php echo stripslashes($data['PopUpFad_text']); ?>
-						<div class="row-actions">
-							<span class="edit"><a title="Edit" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=edit&amp;did=<?php echo $data['PopUpFad_id']; ?>">Edit</a> | </span>
-							<span class="trash"><a onClick="javascript:_PopUpFad_delete('<?php echo $data['PopUpFad_id']; ?>')" href="javascript:void(0);">Delete</a></span> 
-						</div>
-						</td>
-						<td><?php echo esc_html(stripslashes($data['PopUpFad_group'])); ?></td>
-						<td><?php echo esc_html(stripslashes($data['PopUpFad_status'])); ?></td>
-					</tr>
-					<?php 
-					$i = $i+1; 
-				} 
+			foreach ($myData as $data)
+			{
+				?>
+				<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
+				<td align="left"><input type="checkbox" value="<?php echo $data['PopUpFad_id']; ?>" name="PopUpFad_group_item[]"></td>
+				<td><?php echo stripslashes($data['PopUpFad_text']); ?>
+				<div class="row-actions">
+				<span class="edit">
+				<a title="Edit" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=edit&amp;did=<?php echo $data['PopUpFad_id']; ?>">
+				<?php _e('Edit', 'cool-fade-popup'); ?></a> | </span>
+				<span class="trash">
+				<a onClick="javascript:_PopUpFad_delete('<?php echo $data['PopUpFad_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'cool-fade-popup'); ?></a></span> 
+				</div>
+				</td>
+				<td><?php echo esc_html(stripslashes($data['PopUpFad_group'])); ?></td>
+				<td><?php echo esc_html(stripslashes($data['PopUpFad_status'])); ?></td>
+				</tr>
+				<?php 
+				$i = $i+1; 
+			} 
 			}
 			else
 			{ 
-				?><tr><td colspan="4" align="center">No records available.</td></tr><?php 
+				?><tr><td colspan="4" align="center"><?php _e('No records available.', 'cool-fade-popup'); ?></td></tr><?php 
 			} 
 			?>
 		</tbody>
@@ -129,17 +133,20 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
 		<div class="tablenav bottom">
 			<div class="tablenav-pages"><span class="pagination-links"><?php echo $page_links; ?></span></div>
 			<div class="alignleft actions" style="padding-top:8px;">
-			  <a class="button" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=add">Add New</a>
-			  <a class="button" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=set">Widget setting</a>
-			  <a class="button" target="_blank" href="<?php echo WP_PopUpFad_FAV; ?>">Help</a>
+			  <a class="button" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=add"><?php _e('Add New', 'cool-fade-popup'); ?></a>
+			  <a class="button" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup&amp;ac=set"><?php _e('Widget setting', 'cool-fade-popup'); ?></a>
+			  <a class="button" target="_blank" href="<?php echo WP_PopUpFad_FAV; ?>"><?php _e('Help', 'cool-fade-popup'); ?></a>
 			</div>		
 		</div>
-		<h3>Plugin configuration option</h3>
+		<h3><?php _e('Plugin configuration option', 'cool-fade-popup'); ?></h3>
 		<ol>
-			<li>Add the plugin in the posts or pages using short code.</li>
-			<li>Add directly in to the theme using PHP code.</li>
-			<li>Drag and drop the widget to your sidebar.</li>
+			<li><?php _e('Add the plugin in the posts or pages using short code.', 'cool-fade-popup'); ?></li>
+			<li><?php _e('Add directly in to the theme using PHP code.', 'cool-fade-popup'); ?></li>
+			<li><?php _e('Drag and drop the widget to your sidebar.', 'cool-fade-popup'); ?></li>
 		</ol>
-	 <p class="description"><?php echo WP_PopUpFad_LINK; ?></p>
+	 <p class="description">
+	 	<?php _e('Check official website for more information', 'cool-fade-popup'); ?>
+	 	<a target="_blank" href="<?php echo WP_PopUpFad_FAV; ?>"><?php _e('click here', 'cool-fade-popup'); ?></a>
+	 </p>
 	</div>
 </div>

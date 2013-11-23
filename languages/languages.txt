@@ -1,0 +1,11 @@
+=== Cool fade popup ===
+Contributors: www.gopiplus.com, gopiplus 
+Author URI: http://www.gopiplus.com/work/
+Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== For Translators ==
+
+Note: If you have created your own translation, or have an update of an existing one, 
+please send it to gopiplus(at)gmail(.)com so that I can bundle it into the next release of this plugin.

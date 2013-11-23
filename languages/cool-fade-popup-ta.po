@@ -1,0 +1,272 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cool fade popup plugin 8.0\n"
+"POT-Creation-Date: 2013-11-23 22:58+0800\n"
+"PO-Revision-Date: 2013-11-23 23:10+0800\n"
+"Last-Translator: \n"
+"Language-Team: gopiplus <gopiplus.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cool-fade-popup.php:145 ../cool-fade-popup.php:190
+#: ../pages/content-management-add.php:79
+#: ../pages/content-management-edit.php:102
+#: ../pages/content-management-show.php:51 ../pages/widget-setting.php:5
+msgid "Cool fade popup"
+msgstr "கூல் ஃபேட் பாப்அப்"
+
+#: ../cool-fade-popup.php:192 ../pages/content-management-add.php:144
+#: ../pages/content-management-edit.php:175
+#: ../pages/content-management-show.php:148 ../pages/widget-setting.php:130
+msgid "Check official website for more information"
+msgstr "மேலும் தகவலுக்கு அதிகாரப்பூர்வ இணையதளம் பாருங்கள்"
+
+#: ../cool-fade-popup.php:193 ../pages/content-management-add.php:145
+#: ../pages/content-management-edit.php:176
+#: ../pages/content-management-show.php:149 ../pages/widget-setting.php:131
+msgid "click here"
+msgstr "இங்கே கிளிக் செய்யவும்"
+
+#: ../pages/content-management-add.php:25
+#: ../pages/content-management-edit.php:53
+msgid "Please enter the popup message."
+msgstr "Please enter the popup message."
+
+#: ../pages/content-management-add.php:44
+msgid "New details was successfully added."
+msgstr "புதிய விவரங்கள் வெற்றிகரமாக சேர்க்கப்பட்டது."
+
+#: ../pages/content-management-add.php:70
+#: ../pages/content-management-edit.php:93
+msgid "Click here"
+msgstr "இங்கே கிளிக் செய்யவும்"
+
+#: ../pages/content-management-add.php:71
+#: ../pages/content-management-edit.php:94
+msgid " to view the details"
+msgstr "விவரங்கள் பார்வையிட"
+
+#: ../pages/content-management-add.php:81
+msgid "Add new popup details"
+msgstr "புதிய பாப் விவரங்களை சேர்"
+
+#: ../pages/content-management-add.php:82
+#: ../pages/content-management-edit.php:105
+msgid "Enter the popup message"
+msgstr "பாப்அப் செய்தி"
+
+#: ../pages/content-management-add.php:84
+#: ../pages/content-management-edit.php:107
+msgid "We Can enter HTML content also"
+msgstr "We Can enter HTML content also"
+
+#: ../pages/content-management-add.php:85
+#: ../pages/content-management-edit.php:108
+msgid "Select popup group"
+msgstr "பாப்அப் குழு"
+
+#: ../pages/content-management-add.php:111
+#: ../pages/content-management-edit.php:142
+msgid "This is to group the popup message. Select your popup group."
+msgstr "This is to group the popup message. Select your popup group."
+
+#: ../pages/content-management-add.php:112
+#: ../pages/content-management-edit.php:143
+msgid "Display status"
+msgstr "காண்பி"
+
+#: ../pages/content-management-add.php:118
+#: ../pages/content-management-edit.php:149
+msgid "Do you want to show this message into the popup window"
+msgstr "Do you want to show this message into the popup window"
+
+#: ../pages/content-management-add.php:120
+#: ../pages/content-management-edit.php:151
+msgid "Popup timeout"
+msgstr "பாப்அப் நேரம்"
+
+#: ../pages/content-management-add.php:131
+#: ../pages/content-management-edit.php:162
+msgid "Please select your popup timeout."
+msgstr "Please select your popup timeout."
+
+#: ../pages/content-management-add.php:136
+msgid "Insert Details"
+msgstr "சேமிக்கவும்"
+
+#: ../pages/content-management-add.php:137
+#: ../pages/content-management-edit.php:168 ../pages/widget-setting.php:123
+msgid "Cancel"
+msgstr "பேக்"
+
+#: ../pages/content-management-add.php:138
+#: ../pages/content-management-edit.php:169
+#: ../pages/content-management-show.php:138 ../pages/widget-setting.php:124
+msgid "Help"
+msgstr "உதவி"
+
+#: ../pages/content-management-edit.php:16
+#: ../pages/content-management-show.php:21
+msgid "Oops, selected details doesnt exist"
+msgstr "விவரங்கள் இல்லை"
+
+#: ../pages/content-management-edit.php:76
+msgid "Details was successfully updated."
+msgstr "விவரங்கள் வெற்றிகரமாக மேம்படுத்தப்பட்டது."
+
+#: ../pages/content-management-edit.php:104
+msgid "Update popup details"
+msgstr "பாப்அப் விவரங்கள் புதுப்பிக்கவும்"
+
+#: ../pages/content-management-edit.php:167
+msgid "Update Details"
+msgstr "சேமிக்கவும்"
+
+#: ../pages/content-management-show.php:39
+msgid "Selected record was successfully deleted."
+msgstr "வெற்றிகரமாக நீக்கப்பட்டது."
+
+#: ../pages/content-management-show.php:52
+#: ../pages/content-management-show.php:136
+msgid "Add New"
+msgstr "சேர்க்க"
+
+#: ../pages/content-management-show.php:73
+#: ../pages/content-management-show.php:81
+msgid "Popup Content"
+msgstr "பாப்அப் செய்தி"
+
+#: ../pages/content-management-show.php:74
+#: ../pages/content-management-show.php:82
+msgid "Popup Group"
+msgstr "பாப்அப் குழு"
+
+#: ../pages/content-management-show.php:75
+#: ../pages/content-management-show.php:83
+msgid "Display"
+msgstr "காண்பி"
+
+#: ../pages/content-management-show.php:100
+msgid "Edit"
+msgstr "திருத்து"
+
+#: ../pages/content-management-show.php:102
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: ../pages/content-management-show.php:114
+msgid "No records available."
+msgstr "எதுவும் கிடைக்கவில்லை "
+
+#: ../pages/content-management-show.php:125
+msgid " &lt;&lt; "
+msgstr " &lt;&lt; "
+
+#: ../pages/content-management-show.php:126
+msgid " &gt;&gt; "
+msgstr " &gt;&gt; "
+
+#: ../pages/content-management-show.php:137 ../pages/widget-setting.php:6
+msgid "Widget setting"
+msgstr "விட்ஜெட் அமைப்பு"
+
+#: ../pages/content-management-show.php:141
+msgid "Plugin configuration option"
+msgstr "Plugin configuration option"
+
+#: ../pages/content-management-show.php:143
+msgid "Add the plugin in the posts or pages using short code."
+msgstr "Add the plugin in the posts or pages using short code."
+
+#: ../pages/content-management-show.php:144
+msgid "Add directly in to the theme using PHP code."
+msgstr "Add directly in to the theme using PHP code."
+
+#: ../pages/content-management-show.php:145
+msgid "Drag and drop the widget to your sidebar."
+msgstr "Drag and drop the widget to your sidebar."
+
+#: ../pages/widget-setting.php:45
+msgid "Details successfully updated."
+msgstr "விவரங்கள் வெற்றிகரமாக மேம்படுத்தப்பட்டது."
+
+#: ../pages/widget-setting.php:53
+msgid "Enter widget title"
+msgstr "விட்ஜெட் தலைப்பு"
+
+#: ../pages/widget-setting.php:55
+msgid "Enter widget title, Only for widget."
+msgstr "Enter widget title, Only for widget."
+
+#: ../pages/widget-setting.php:57
+msgid "Popup on home page"
+msgstr "பாப்அப் on Home page"
+
+#: ../pages/widget-setting.php:59
+msgid "Enter YES (or) NO, This option is to display the popup on home page."
+msgstr "Enter YES (or) NO, This option is to display the popup on home page."
+
+#: ../pages/widget-setting.php:61
+msgid "Popup on wp posts"
+msgstr "பாப்அப் on Post"
+
+#: ../pages/widget-setting.php:63
+msgid "Enter YES (or) NO, This option is to display the popup on wp posts"
+msgstr "Enter YES (or) NO, This option is to display the popup on wp posts"
+
+#: ../pages/widget-setting.php:65
+msgid "Popup on wp pages"
+msgstr "பாப்அப் on Pages"
+
+#: ../pages/widget-setting.php:67
+msgid "Enter YES (or) NO, This option is to display the popup on wp pages"
+msgstr "Enter YES (or) NO, This option is to display the popup on wp pages"
+
+#: ../pages/widget-setting.php:69
+msgid "Popup on wp archives"
+msgstr "பாப்அப் on Archive"
+
+#: ../pages/widget-setting.php:71 ../pages/widget-setting.php:75
+msgid "Enter YES (or) NO"
+msgstr "Enter YES (or) NO"
+
+#: ../pages/widget-setting.php:73
+msgid "Popup on wp search"
+msgstr "பாப்அப் on Search"
+
+#: ../pages/widget-setting.php:77
+msgid "Select your popup group"
+msgstr "பாப்அப் குழு"
+
+#: ../pages/widget-setting.php:111
+msgid "Select your group name to display the popup message for widget."
+msgstr "Select your group name to display the popup message for widget."
+
+#: ../pages/widget-setting.php:113
+msgid "Enable Popup Session"
+msgstr "பாப்அப் Session"
+
+#: ../pages/widget-setting.php:115
+msgid ""
+"Enter YES (or) NO, This is to display popup once per session, <br />YES = "
+"Display popup once per session."
+msgstr ""
+"Enter YES (or) NO, This is to display popup once per session, <br />YES = "
+"Display popup once per session."
+
+#: ../pages/widget-setting.php:117
+msgid "Enable Random Option"
+msgstr "ரேண்டம் ஆர்டர்"
+
+#: ../pages/widget-setting.php:119
+msgid "Enter YES (or) NO, This is to display popup message randomly"
+msgstr "Enter YES (or) NO, This is to display popup message randomly"
+
+#: ../pages/widget-setting.php:122
+msgid "Submit"
+msgstr "சேமிக்கவும்"

@@ -2,8 +2,8 @@
   <div class="form-wrap">
     <div id="icon-edit" class="icon32 icon32-posts-post"><br>
     </div>
-    <h2><?php echo WP_PopUpFad_TITLE; ?></h2>
-	<h3>Widget setting</h3>
+    <h2><?php _e('Cool fade popup', 'cool-fade-popup'); ?></h2>
+	<h3><?php _e('Widget setting', 'cool-fade-popup'); ?></h3>
     <?php
 	$PopUpFad_Title = get_option('PopUpFad_Title');
 	$PopUpFad_On_Homepage = get_option('PopUpFad_On_Homepage');
@@ -42,7 +42,7 @@
 		
 		?>
 		<div class="updated fade">
-			<p><strong>Details successfully updated.</strong></p>
+			<p><strong><?php _e('Details successfully updated.', 'cool-fade-popup'); ?></strong></p>
 		</div>
 		<?php
 	}
@@ -50,35 +50,36 @@
 	<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/cool-fade-popup/pages/setting.js"></script>
     <form name="ssg_form" method="post" action="">
       
-	  <label for="tag-title">Enter widget title</label>
+	  <label for="tag-title"><?php _e('Enter widget title', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_Title" id="PopUpFad_Title" type="text" value="<?php echo $PopUpFad_Title; ?>" size="80" maxlength="100" />
-      <p>Enter widget title, Only for widget.</p>
+      <p><?php _e('Enter widget title, Only for widget.', 'cool-fade-popup'); ?></p>
       
-	  <label for="tag-width">Popup on home page</label>
+	  <label for="tag-width"><?php _e('Popup on home page', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_On_Homepage" id="PopUpFad_On_Homepage" type="text" value="<?php echo $PopUpFad_On_Homepage; ?>" maxlength="3" />
-      <p>Enter YES (or) NO, This option is to display the popup on home page.</p>
+      <p><?php _e('Enter YES (or) NO, This option is to display the popup on home page.', 'cool-fade-popup'); ?></p>
       
-	  <label for="tag-height">Popup on wp posts</label>
+	  <label for="tag-height"><?php _e('Popup on wp posts', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_On_Posts" id="PopUpFad_On_Posts" type="text" value="<?php echo $PopUpFad_On_Posts; ?>" maxlength="3" />
-      <p>Enter YES (or) NO, This option is to display the popup on wp posts</p>
+      <p><?php _e('Enter YES (or) NO, This option is to display the popup on wp posts', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height">Popup on wp pages</label>
+	  <label for="tag-height"><?php _e('Popup on wp pages', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_On_Pages" id="PopUpFad_On_Pages" type="text" value="<?php echo $PopUpFad_On_Pages; ?>" maxlength="3" />
-      <p>Enter YES (or) NO, This option is to display the popup on wp pages</p>
+      <p><?php _e('Enter YES (or) NO, This option is to display the popup on wp pages', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height">Popup on wp archives</label>
+	  <label for="tag-height"><?php _e('Popup on wp archives', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_On_Archives" id="PopUpFad_On_Archives" type="text" value="<?php echo $PopUpFad_On_Archives; ?>" maxlength="3" />
-      <p>Enter YES (or) NO</p>
+      <p><?php _e('Enter YES (or) NO', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height">Popup on wp search</label>
+	  <label for="tag-height"><?php _e('Popup on wp search', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_On_Search" id="PopUpFad_On_Search" type="text" value="<?php echo $PopUpFad_On_Search; ?>" maxlength="3" />
-      <p>Enter YES (or) NO</p>
+      <p><?php _e('Enter YES (or) NO', 'cool-fade-popup'); ?></p>
 	     
-	  <label for="tag-height">Select your popup group</label>
-	  <select name="ssg_type" id="ssg_type">
+	  <label for="tag-height"><?php _e('Select your popup group', 'cool-fade-popup'); ?></label>
+	  <select name="PopUpFad_Group" id="PopUpFad_Group">
 	 	<?php
 		$sSql = "SELECT distinct(PopUpFad_group) as PopUpFad_group FROM `".WP_PopUpFad_TABLE."` order by PopUpFad_group";
 		$myDistinctData = array();
+		$selected = "";
 		$arrDistinctDatas = array();
 		$myDistinctData = $wpdb->get_results($sSql, ARRAY_A);
 		$i = 0;
@@ -91,7 +92,7 @@
 			}
 			foreach ($arrDistinctData as $arrDistinct)
 			{
-				if(strtoupper($PopUpFad_group) == strtoupper($arrDistinct["PopUpFad_group"]) ) 
+				if(strtoupper($PopUpFad_Group) == strtoupper($arrDistinct["PopUpFad_group"]) ) 
 				{ 
 					$selected = "selected='selected'"; 
 				}
@@ -107,22 +108,26 @@
 		}
 		?>
       </select>
-      <p>Select your group name to display the popup message for widget.</p>
+      <p><?php _e('Select your group name to display the popup message for widget.', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height">Enable Popup Session</label>
+	  <label for="tag-height"><?php _e('Enable Popup Session', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_Session" id="PopUpFad_Session" type="text" value="<?php echo $PopUpFad_Session; ?>" maxlength="3" />
-      <p>Enter YES (or) NO, This is to display popup once per session, <br />YES = Display popup once per session.</p>
+      <p><?php _e('Enter YES (or) NO, This is to display popup once per session, <br />YES = Display popup once per session.', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height">Enable Random Option</label>
+	  <label for="tag-height"><?php _e('Enable Random Option', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_Random" id="PopUpFad_Random" type="text" value="<?php echo $PopUpFad_Random; ?>" maxlength="3" />
-      <p>Enter YES (or) NO, This is to display popup message randomly</p>
+      <p><?php _e('Enter YES (or) NO, This is to display popup message randomly', 'cool-fade-popup'); ?></p>
 	  
       <br />
-	  <input name="PopUpFad_submit" id="PopUpFad_submit" class="button" value="Submit" type="submit" />
-	  <input name="publish" lang="publish" class="button" onclick="_PopUpFad_redirect()" value="Cancel" type="button" />
-      <input name="Help" lang="publish" class="button" onclick="PopUpFad_help()" value="Help" type="button" />
+	  <input name="PopUpFad_submit" id="PopUpFad_submit" class="button" value="<?php _e('Submit', 'cool-fade-popup'); ?>" type="submit" />
+	  <input name="publish" lang="publish" class="button" onclick="_PopUpFad_redirect()" value="<?php _e('Cancel', 'cool-fade-popup'); ?>" type="button" />
+      <input name="Help" lang="publish" class="button" onclick="PopUpFad_help()" value="<?php _e('Help', 'cool-fade-popup'); ?>" type="button" />
 	  <?php wp_nonce_field('PopUpFad_form_setting'); ?>
     </form>
   </div>
-  <br /><p class="description"><?php echo WP_PopUpFad_LINK; ?></p>
+  <br />
+  <p class="description">
+	<?php _e('Check official website for more information', 'cool-fade-popup'); ?>
+	<a target="_blank" href="<?php echo WP_PopUpFad_FAV; ?>"><?php _e('click here', 'cool-fade-popup'); ?></a>
+  </p>
 </div>
