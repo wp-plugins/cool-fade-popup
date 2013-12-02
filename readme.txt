@@ -47,7 +47,10 @@ http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 [Superb slideshow gallery](http://www.gopiplus.com/work/2010/10/10/superb-slideshow-gallery/)		
 [Email newsletter](http://www.gopiplus.com/work/2010/09/25/email-newsletter/)
 
-Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment
+= Translators =
+
+* Tamil (ta) - [Gopi](http://www.gopiplus.com/)
+* Spanish (es_ES) - [Maria Ramos]
 	
 == Installation ==
 
