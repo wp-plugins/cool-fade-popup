@@ -1,3 +1,4 @@
+<?php if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); } ?>
 <div class="wrap">
 <?php
 $did = isset($_GET['did']) ? $_GET['did'] : '0';
@@ -79,21 +80,21 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 
 if ($PopUpFad_error_found == TRUE && isset($PopUpFad_errors[0]) == TRUE)
 {
-?>
-  <div class="error fade">
-    <p><strong><?php echo $PopUpFad_errors[0]; ?></strong></p>
-  </div>
-  <?php
+	?>
+	<div class="error fade">
+		<p><strong><?php echo $PopUpFad_errors[0]; ?></strong></p>
+	</div>
+	<?php
 }
 if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 {
-?>
-  <div class="updated fade">
-    <p><strong><?php echo $PopUpFad_success; ?> 
-	<a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup"><?php _e('Click here', 'cool-fade-popup'); ?></a>
-	<?php _e(' to view the details', 'cool-fade-popup'); ?></strong></p>
-  </div>
-  <?php
+	?>
+	<div class="updated fade">
+		<p><strong><?php echo $PopUpFad_success; ?> 
+			<a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=cool-fade-popup"><?php _e('Click here', 'cool-fade-popup'); ?></a>
+		<?php _e(' to view the details', 'cool-fade-popup'); ?></strong></p>
+	</div>
+	<?php
 }
 ?>
 <script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/cool-fade-popup/pages/setting.js"></script>

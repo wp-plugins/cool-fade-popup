@@ -2,7 +2,7 @@
 ##########################################################################################################
 ###### Project   : Cool fade popup wordpress plugin 												######
 ###### File Name : content-management.php                   										######
-###### Author    : Gopi.R (http://www.gopiplus.com/work/)                        					######
+###### Author    : Gopi Ramasamy                       												######
 ###### Link      : http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/    						######
 ##########################################################################################################
 */

@@ -1,12 +1,12 @@
 === Cool fade popup ===
 Contributors: www.gopiplus.com, gopiplus 
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
-Author URI: http://www.gopiplus.com/work/
+Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 8.0
+Tested up to: 3.9
+Stable tag: 8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -132,6 +132,11 @@ Paging option in admin. If you have more then 10 popup messages, you will get th
 Plugin *.po file (cool-fade-popup.po) available in the languages folder. Translators Welcome.
 4. Fixed all warning messages
 
+= 8.1 =
+
+1. Tested up to 3.9
+2. Added little security feature.
+
 == Upgrade Notice ==
 
 = 1.0 = 								
@@ -185,3 +190,8 @@ Paging option in admin. If you have more then 10 popup messages, you will get th
 3. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (cool-fade-popup.po) available in the languages folder. Translators Welcome.
 4. Fixed all warning messages
+
+= 8.1 =
+
+1. Tested up to 3.9
+2. Added little security feature.

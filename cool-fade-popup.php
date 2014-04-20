@@ -1,16 +1,17 @@
 <?php
-
 /*
 Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
-Author: Gopi.R
-Version: 8.0
+Author: Gopi Ramasamy
+Version: 8.1
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); }
 
 global $wpdb, $wp_version;
 define("WP_PopUpFad_TABLE", $wpdb->prefix . "popupfadpopup");

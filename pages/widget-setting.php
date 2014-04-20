@@ -1,3 +1,4 @@
+<?php if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); } ?>
 <div class="wrap">
   <div class="form-wrap">
     <div id="icon-edit" class="icon32 icon32-posts-post"><br>
@@ -15,7 +16,7 @@
 	$PopUpFad_Session = get_option('PopUpFad_Session');
 	$PopUpFad_Random = get_option('PopUpFad_Random');
 	
-	if (@$_POST['PopUpFad_submit']) 
+	if (isset($_POST['PopUpFad_submit'])) 
 	{
 		//	Just security thingy that wordpress offers us
 		check_admin_referer('PopUpFad_form_setting');
@@ -110,7 +111,7 @@
       </select>
       <p><?php _e('Select your group name to display the popup message for widget.', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height"><?php _e('Enable Popup Session', 'cool-fade-popup'); ?></label>
+	  <label for="tag-height"><?php _e('Enable Popup Session (Global Setting)', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_Session" id="PopUpFad_Session" type="text" value="<?php echo $PopUpFad_Session; ?>" maxlength="3" />
       <p><?php _e('Enter YES (or) NO, This is to display popup once per session, <br />YES = Display popup once per session.', 'cool-fade-popup'); ?></p>
 	  
