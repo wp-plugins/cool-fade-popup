@@ -1,5 +1,5 @@
 === Cool fade popup ===
-Contributors: www.gopiplus.com, gopiplus 
+Contributors: gopiplus, www.gopiplus.com
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
@@ -41,6 +41,7 @@ This popup ads are very effective advertising tools for your website since they 
 * Tamil (ta) - [Gopi](http://www.gopiplus.com/)
 * Spanish (es_ES) - [Maria Ramos]
 	
+
 == Installation ==
 
 **Installation Instruction & Configuration**  
