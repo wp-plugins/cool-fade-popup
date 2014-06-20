@@ -128,6 +128,8 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 		<option value='8000'>8 Seconds</option>
 		<option value='10000'>10 Seconds</option>
 		<option value='12000'>12 Seconds</option>
+		<option value='25000'>25 Seconds</option>
+		<option value='60000'>60 Seconds</option>
       </select>
 	  <p><?php _e('Please select your popup timeout.', 'cool-fade-popup'); ?></p>
 	  

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cool fade popup plugin 8.0\n"
-"POT-Creation-Date: 2014-04-18 10:45+0800\n"
-"PO-Revision-Date: 2014-04-18 10:45+0800\n"
+"POT-Creation-Date: 2014-06-20 23:46+0800\n"
+"PO-Revision-Date: 2014-06-20 23:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: gopiplus <gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,14 +20,14 @@ msgstr ""
 msgid "Cool fade popup"
 msgstr "கூல் ஃபேட் பாப்அப்"
 
-#: ../cool-fade-popup.php:193 ../pages/content-management-add.php:145
-#: ../pages/content-management-edit.php:176
+#: ../cool-fade-popup.php:193 ../pages/content-management-add.php:147
+#: ../pages/content-management-edit.php:178
 #: ../pages/content-management-show.php:149 ../pages/widget-setting.php:131
 msgid "Check official website for more information"
 msgstr "மேலும் தகவலுக்கு அதிகாரப்பூர்வ இணையதளம் பாருங்கள்"
 
-#: ../cool-fade-popup.php:194 ../pages/content-management-add.php:146
-#: ../pages/content-management-edit.php:177
+#: ../cool-fade-popup.php:194 ../pages/content-management-add.php:148
+#: ../pages/content-management-edit.php:179
 #: ../pages/content-management-show.php:150 ../pages/widget-setting.php:132
 msgid "click here"
 msgstr "இங்கே கிளிக் செய்யவும்"
@@ -90,22 +90,22 @@ msgstr "Do you want to show this message into the popup window"
 msgid "Popup timeout"
 msgstr "பாப்அப் நேரம்"
 
-#: ../pages/content-management-add.php:132
-#: ../pages/content-management-edit.php:163
+#: ../pages/content-management-add.php:134
+#: ../pages/content-management-edit.php:165
 msgid "Please select your popup timeout."
 msgstr "Please select your popup timeout."
 
-#: ../pages/content-management-add.php:137
+#: ../pages/content-management-add.php:139
 msgid "Insert Details"
 msgstr "சேமிக்கவும்"
 
-#: ../pages/content-management-add.php:138
-#: ../pages/content-management-edit.php:169 ../pages/widget-setting.php:124
+#: ../pages/content-management-add.php:140
+#: ../pages/content-management-edit.php:171 ../pages/widget-setting.php:124
 msgid "Cancel"
 msgstr "பேக்"
 
-#: ../pages/content-management-add.php:139
-#: ../pages/content-management-edit.php:170
+#: ../pages/content-management-add.php:141
+#: ../pages/content-management-edit.php:172
 #: ../pages/content-management-show.php:139 ../pages/widget-setting.php:125
 msgid "Help"
 msgstr "உதவி"
@@ -123,7 +123,7 @@ msgstr "விவரங்கள் வெற்றிகரமாக மேம�
 msgid "Update popup details"
 msgstr "பாப்அப் விவரங்கள் புதுப்பிக்கவும்"
 
-#: ../pages/content-management-edit.php:168
+#: ../pages/content-management-edit.php:170
 msgid "Update Details"
 msgstr "சேமிக்கவும்"
 

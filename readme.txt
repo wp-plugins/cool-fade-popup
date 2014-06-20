@@ -5,12 +5,12 @@ Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 8.1
+Tested up to: 3.9.1
+Stable tag: 8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
-Sometimes its useful to add a popup to your site to show your ads, announcement. Using this plug-in you can create unblockable popups for your site.
+Sometimes its useful to add a popup to your site to show your announcement, ads. Using this plug-in you can create unblockable popups for your site.
 
 == Description ==
 
@@ -21,10 +21,11 @@ Check official website for live demo [http://www.gopiplus.com/work/2011/01/08/co
 [Comments/Suggestion](http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/)		
 [About author](http://www.gopiplus.com/work/)			
 
-Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. 
-Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
-	
+Cool fade popup wordpress plugin create a popup message to the WordPress website with customizable html content. Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
+
 This popup ads are very effective advertising tools for your website since they won’t get automatically blocked by popup blocking tool.
+
+= Features of this plugin =
 
 *   Easy installation.
 *   Easy configuration.
@@ -33,19 +34,7 @@ This popup ads are very effective advertising tools for your website since they 
 *   Option to display random content.
 *   Supports localization.
 
-http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
-
 [Click here](http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/) to see detailed information about this plugin.	
-
-**My few other plugins**
-
-[Information reel](http://www.gopiplus.com/work/2011/04/16/wordpress-plugin-information-reel/)	
-[News announcement scroll](http://www.gopiplus.com/work/2011/01/01/news-announcement-scroll/)		
-[Continuous rss scrolling](http://www.gopiplus.com/work/2010/09/05/continuous-rss-scrolling/)		
-[Continuous announcement scroller](http://www.gopiplus.com/work/2010/09/04/continuous-announcement-scroller/)		
-[Vertical scroll recent post](http://www.gopiplus.com/work/2010/07/18/vertical-scroll-recent-post/)		
-[Superb slideshow gallery](http://www.gopiplus.com/work/2010/10/10/superb-slideshow-gallery/)		
-[Email newsletter](http://www.gopiplus.com/work/2010/09/25/email-newsletter/)
 
 = Translators =
 
@@ -60,22 +49,30 @@ http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 
 == Frequently Asked Questions ==
 
-= Q1. How to enable popup on all the website pages? = 
-= Q2. How to enable popup on particular page? = 
-= Q3. What is group name in the form? = 
-= Q4. Suppose if i have more then one content can we display any one random? = 
-= Q5. Is possible to add HTML content? = 
-= Q6. How to arrange the popup style? = 
-= Q7. Can make this pop-up only for the first time visit ? = 
-= Q8. My theme does not support widgets. How to enable popup on all the pages? = 
-= Q9. Is possible to set the expiration date for popup? = 
+Q1. How to enable popup on all the website pages?
+
+Q2. How to enable popup on particular page?
+
+Q3. What is group name in the form?
+
+Q4. Suppose if i have more then one content can we display any one random?
+
+Q5. Is possible to add HTML content?
+
+Q6. How to arrange the popup style?
+
+Q7. Can make this pop-up only for the first time visit?
+
+Q8. My theme does not support widgets. How to enable popup on all the pages?
+
+Q9. Is possible to set the expiration date for popup?
 
 [Answer page](http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/)			
-[Contact](http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/)	
 
 == Screenshots ==
 
 1. Front end. http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
+
 2. Admin screen. http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 
 == Changelog ==
@@ -137,6 +134,10 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 1. Tested up to 3.9
 2. Added little security feature.
 
+= 8.2 =
+
+1. 25 Seconds, 60 Seconds added in popup timeout option dropdown box.
+
 == Upgrade Notice ==
 
 = 1.0 = 								
@@ -195,3 +196,7 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 
 1. Tested up to 3.9
 2. Added little security feature.
+
+= 8.2 =
+
+1. 25 Seconds, 60 Seconds added in popup timeout option dropdown box.
