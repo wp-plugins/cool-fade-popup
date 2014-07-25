@@ -6,7 +6,7 @@ Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
 Tested up to: 3.9.1
-Stable tag: 8.2
+Stable tag: 8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -139,6 +139,10 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 
 1. 25 Seconds, 60 Seconds added in popup timeout option dropdown box.
 
+= 8.3 =
+
+1. From this version plugin support short code in the popup (i.e You can add other plugin short code inside this popup window)
+
 == Upgrade Notice ==
 
 = 1.0 = 								
@@ -201,3 +205,7 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 = 8.2 =
 
 1. 25 Seconds, 60 Seconds added in popup timeout option dropdown box.
+
+= 8.3 =
+
+1. From this version plugin support short code in the popup (i.e You can add other plugin short code inside this popup window)

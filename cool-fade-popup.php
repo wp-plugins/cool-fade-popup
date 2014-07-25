@@ -4,7 +4,7 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi Ramasamy
-Version: 8.2
+Version: 8.3
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
@@ -49,6 +49,8 @@ function PopUpFad()
 		foreach ( $data as $data ) 
 		{
 			$PopUpData = stripslashes($data->PopUpFad_text);
+			$PopUpDataTemp = do_shortcode($PopUpData);
+			$PopUpData = $PopUpDataTemp;
 			$PopUpFad_Timeout = $data->PopUpFad_extra1;
 			if($PopUpFad_Timeout <> "")
 			{
@@ -278,6 +280,9 @@ function PopUpFad_filter_shortcode( $atts )
 		foreach ( $data as $data ) 
 		{
 			$PopUpData = stripslashes($data->PopUpFad_text);
+			$PopUpDataTemp = do_shortcode($PopUpData);
+			$PopUpData = $PopUpDataTemp;
+			
 			$PopUpFad_Timeout = $data->PopUpFad_extra1;
 			if($PopUpFad_Timeout <> "")
 			{
