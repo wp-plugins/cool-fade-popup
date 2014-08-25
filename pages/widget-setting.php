@@ -15,6 +15,7 @@
 	$PopUpFad_Group = get_option('PopUpFad_Group');
 	$PopUpFad_Session = get_option('PopUpFad_Session');
 	$PopUpFad_Random = get_option('PopUpFad_Random');
+	$PopUpFad_nopopup = get_option('PopUpFad_nopopup');
 	
 	if (isset($_POST['PopUpFad_submit'])) 
 	{
@@ -30,6 +31,7 @@
 		$PopUpFad_Group = stripslashes(trim($_POST['PopUpFad_Group']));
 		$PopUpFad_Session = stripslashes(trim($_POST['PopUpFad_Session']));
 		$PopUpFad_Random = stripslashes(trim($_POST['PopUpFad_Random']));
+		$PopUpFad_nopopup = stripslashes(trim($_POST['PopUpFad_nopopup']));
 		
 		update_option('PopUpFad_Title', $PopUpFad_Title );
 		update_option('PopUpFad_On_Homepage', $PopUpFad_On_Homepage );
@@ -40,6 +42,7 @@
 		update_option('PopUpFad_Group', $PopUpFad_Group );
 		update_option('PopUpFad_Session', $PopUpFad_Session );
 		update_option('PopUpFad_Random', $PopUpFad_Random );
+		update_option('PopUpFad_nopopup', $PopUpFad_nopopup );
 		
 		?>
 		<div class="updated fade">
@@ -111,13 +114,17 @@
       </select>
       <p><?php _e('Select your group name to display the popup message for widget.', 'cool-fade-popup'); ?></p>
 	  
+	  <label for="tag-height"><?php _e('Enable Random Option', 'cool-fade-popup'); ?></label>
+      <input name="PopUpFad_Random" id="PopUpFad_Random" type="text" value="<?php echo $PopUpFad_Random; ?>" maxlength="3" />
+      <p><?php _e('Enter YES (or) NO, This is to display popup message randomly', 'cool-fade-popup'); ?></p>
+	  
 	  <label for="tag-height"><?php _e('Enable Popup Session (Global Setting)', 'cool-fade-popup'); ?></label>
       <input name="PopUpFad_Session" id="PopUpFad_Session" type="text" value="<?php echo $PopUpFad_Session; ?>" maxlength="3" />
       <p><?php _e('Enter YES (or) NO, This is to display popup once per session, <br />YES = Display popup once per session.', 'cool-fade-popup'); ?></p>
 	  
-	  <label for="tag-height"><?php _e('Enable Random Option', 'cool-fade-popup'); ?></label>
-      <input name="PopUpFad_Random" id="PopUpFad_Random" type="text" value="<?php echo $PopUpFad_Random; ?>" maxlength="3" />
-      <p><?php _e('Enter YES (or) NO, This is to display popup message randomly', 'cool-fade-popup'); ?></p>
+	  <label for="tag-height"><?php _e('No popup text (Global Setting)', 'cool-fade-popup'); ?></label>
+      <input name="PopUpFad_nopopup" id="PopUpFad_nopopup" type="text" value="<?php echo $PopUpFad_nopopup; ?>" maxlength="500" size="80" />
+      <p><?php _e('This text will be display, if no popup available or all popup expired.', 'cool-fade-popup'); ?></p>
 	  
       <br />
 	  <input name="PopUpFad_submit" id="PopUpFad_submit" class="button" value="<?php _e('Submit', 'cool-fade-popup'); ?>" type="submit" />

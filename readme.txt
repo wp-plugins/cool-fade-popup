@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
-Tested up to: 3.9.1
-Stable tag: 8.3
+Tested up to: 4.0
+Stable tag: 8.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -40,7 +40,6 @@ This popup ads are very effective advertising tools for your website since they 
 
 * Tamil (ta) - [Gopi](http://www.gopiplus.com/)
 * Spanish (es_ES) - [Maria Ramos]
-	
 
 == Installation ==
 
@@ -143,6 +142,11 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 
 1. From this version plugin support short code in the popup (i.e You can add other plugin short code inside this popup window)
 
+= 8.4 =
+
+1. Tested up to 4.0
+2. Added expiration date option for popup message.
+
 == Upgrade Notice ==
 
 = 1.0 = 								
@@ -209,3 +213,8 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 = 8.3 =
 
 1. From this version plugin support short code in the popup (i.e You can add other plugin short code inside this popup window)
+
+= 8.4 =
+
+1. Tested up to 4.0
+2. Added expiration date option for popup message.

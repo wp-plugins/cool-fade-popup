@@ -39,7 +39,8 @@ else
 		'PopUpFad_status' => $data['PopUpFad_status'],
 		'PopUpFad_group' => $data['PopUpFad_group'],
 		'PopUpFad_extra1' => $data['PopUpFad_extra1'],
-		'PopUpFad_extra2' => $data['PopUpFad_extra2']
+		'PopUpFad_extra2' => $data['PopUpFad_extra2'],
+		'PopUpFad_date' => $data['PopUpFad_date']
 	);
 }
 // Form submitted, check the data
@@ -58,6 +59,7 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 	$form['PopUpFad_status'] = isset($_POST['PopUpFad_status']) ? $_POST['PopUpFad_status'] : '';
 	$form['PopUpFad_group'] = isset($_POST['PopUpFad_group']) ? $_POST['PopUpFad_group'] : '';
 	$form['PopUpFad_extra1'] = isset($_POST['PopUpFad_extra1']) ? $_POST['PopUpFad_extra1'] : '';
+	$form['PopUpFad_date'] = isset($_POST['PopUpFad_date']) ? $_POST['PopUpFad_date'] : '';
 
 	//	No errors found, we can add this Group to the table
 	if ($PopUpFad_error_found == FALSE)
@@ -67,10 +69,11 @@ if (isset($_POST['PopUpFad_form_submit']) && $_POST['PopUpFad_form_submit'] == '
 				SET `PopUpFad_text` = %s,
 				`PopUpFad_status` = %s,
 				`PopUpFad_group` = %s,
-				`PopUpFad_extra1` = %s
+				`PopUpFad_extra1` = %s,
+				`PopUpFad_date` = %s
 				WHERE PopUpFad_id = %d
 				LIMIT 1",
-				array($form['PopUpFad_text'], $form['PopUpFad_status'], $form['PopUpFad_group'], $form['PopUpFad_extra1'], $did)
+				array($form['PopUpFad_text'], $form['PopUpFad_status'], $form['PopUpFad_group'], $form['PopUpFad_extra1'], $form['PopUpFad_date'], $did)
 			);
 		$wpdb->query($sSql);
 		
@@ -104,7 +107,7 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 	<form name="PopUpFad_form" method="post" action="#" onsubmit="return PopUpFad_submit()"  >
       <h3><?php _e('Update popup details', 'cool-fade-popup'); ?></h3>
 	  <label for="tag-image"><?php _e('Enter the popup message', 'cool-fade-popup'); ?></label>
-      <textarea name="PopUpFad_text" id="PopUpFad_text" cols="130" rows="9"><?php echo esc_html(stripslashes($form['PopUpFad_text'])); ?></textarea>
+      <textarea name="PopUpFad_text" id="PopUpFad_text" cols="100" rows="9"><?php echo esc_html(stripslashes($form['PopUpFad_text'])); ?></textarea>
       <p><?php _e('We Can enter HTML content also', 'cool-fade-popup'); ?></p>
       <label for="tag-select-gallery-group"><?php _e('Select popup group', 'cool-fade-popup'); ?></label>
       <select name="PopUpFad_group" id="PopUpFad_group">
@@ -163,6 +166,10 @@ if ($PopUpFad_error_found == FALSE && strlen($PopUpFad_success) > 0)
 		<option value='60000' <?php if($form['PopUpFad_extra1']=='60000') { echo 'selected="selected"' ; } ?>>60 Seconds</option>
       </select>
 	  <p><?php _e('Please select your popup timeout.', 'cool-fade-popup'); ?></p>
+	  
+	<label for="tag-title"><?php _e('Expiration date', 'cool-fade-popup'); ?></label>
+	<input name="PopUpFad_date" type="text" id="PopUpFad_date" value="<?php echo substr($form['PopUpFad_date'],0,10); ?>" maxlength="10" />
+	<p><?php _e('Please enter the expiration date in this format YYYY-MM-DD <br /> 9999-12-31 : Is equal to no expire.', 'cool-fade-popup'); ?></p>
 	  
       <input name="PopUpFad_id" id="PopUpFad_id" type="hidden" value="">
       <input type="hidden" name="PopUpFad_form_submit" value="yes"/>

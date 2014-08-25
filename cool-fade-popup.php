@@ -4,7 +4,7 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi Ramasamy
-Version: 8.3
+Version: 8.4
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
@@ -29,7 +29,7 @@ function PopUpFad()
 	$PopUpFad_Random = get_option('PopUpFad_Random');
 	
 	$sSql = "select PopUpFad_text,PopUpFad_extra1 from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
-	
+	$sSql = $sSql . " and ( PopUpFad_date >= NOW() or PopUpFad_date = '0000-00-00 00:00:00')";
 	if($PopUpFad_Group <> "")
 	{
 		 $sSql = $sSql . " and PopUpFad_group='".$PopUpFad_Group."'";
@@ -61,36 +61,36 @@ function PopUpFad()
 				$PopUpFad_Timeout = 0;
 			}
 		}
+		$PopUpFad_siteurl = get_option('siteurl');
+		$PopUpFad_pluginurl = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/";
+		$PopUpFad_close = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/close.jpg";
+		if(!is_numeric($PopUpFad_Timeout)) 
+		{ 
+			$PopUpFad_Timeout = 3000;
+		}
+		elseif($PopUpFad_Timeout == 0)
+		{
+			$PopUpFad_Timeout = 3000;
+		}
+		?>
+		<script type="text/javascript" src="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.css" />
+		<div id="PopUpFad">
+			<div class="PopUpFadClose"><a href="#" onclick="PopUpFadCloseX()"><img src="<?php echo $PopUpFad_close; ?>" /></a></div>
+			<div>
+			<?php echo $PopUpData; ?>
+			</div>
+		</div>
+		<script type="text/javascript">
+		setTimeout('PopUpFadOpen()', <?php echo $PopUpFad_Timeout; ?>);
+		</script>
+		<?php
 	}
 	else
 	{
-		$PopUpData = "No content available in the db with the group name " . $PopUpFad_group . ". Please check the plugin page or in the admin to find more info.";
+		$PopUpFad_nopopup = get_option('PopUpFad_nopopup');
+		echo $PopUpFad_nopopup;
 	}
-	
-	$PopUpFad_siteurl = get_option('siteurl');
-	$PopUpFad_pluginurl = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/";
-	$PopUpFad_close = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/close.jpg";
-	if(!is_numeric($PopUpFad_Timeout)) 
-	{ 
-		$PopUpFad_Timeout = 3000;
-	}
-	elseif($PopUpFad_Timeout == 0)
-	{
-		$PopUpFad_Timeout = 3000;
-	}
-	?>
-	<script type="text/javascript" src="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo $PopUpFad_pluginurl ; ?>PopUpFad.css" />
-	<div id="PopUpFad">
-  		<div class="PopUpFadClose"><a href="#" onclick="PopUpFadCloseX()"><img src="<?php echo $PopUpFad_close; ?>" /></a></div>
-        <div>
-  		<?php echo $PopUpData; ?>
-        </div>
-	</div>
-	<script type="text/javascript">
-	setTimeout('PopUpFadOpen()', <?php echo $PopUpFad_Timeout; ?>);
-	</script>
-	<?php
 }
 
 
@@ -136,6 +136,7 @@ function PopUpFad_activation()
 	add_option('PopUpFad_Group', "SAMPLE");
 	add_option('PopUpFad_Random', "YES");
 	add_option('PopUpFad_Session', "NO");
+	add_option('PopUpFad_nopopup', "No popup available or all popup expired.");
 }
 
 function PopUpFad_deactivate() 
@@ -260,7 +261,7 @@ function PopUpFad_filter_shortcode( $atts )
 	$PopUpFad_session = $atts['session'];
 	
 	$sSql = "select PopUpFad_text,PopUpFad_extra1 from ".WP_PopUpFad_TABLE." where PopUpFad_status='YES'";
-	
+	$sSql = $sSql . " and ( PopUpFad_date >= NOW() or PopUpFad_date = '0000-00-00 00:00:00')";
 	if($PopUpFad_group <> "")
 	{
 		 $sSql = $sSql . " and PopUpFad_group='".$PopUpFad_group."'";
@@ -293,48 +294,50 @@ function PopUpFad_filter_shortcode( $atts )
 				$PopUpFad_Timeout = 0;
 			}
 		}
-	}
-	else
-	{
-		$PopUpData = "No content available in the db with the group name " . $PopUpFad_group . ". Please check the plugin page or in the admin to find more info.";
-	}
-	
-	if(!is_numeric($PopUpFad_Timeout)) 
-	{ 
-		$PopUpFad_Timeout = 3000;
-	}
-	elseif($PopUpFad_Timeout == 0)
-	{
-		$PopUpFad_Timeout = 3000;
-	}
-	
-	$PopUpFad_siteurl = get_option('siteurl');
-	$PopUpFad_pluginurl = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/";
-	$PopUpFad_close = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/close.jpg";
-	
-	$PopUpFad_txt = $PopUpFad_txt . '<script type="text/javascript" src="'. $PopUpFad_pluginurl . 'PopUpFad.js"></script>';
-	$PopUpFad_txt = $PopUpFad_txt . '<link rel="stylesheet" type="text/css" href="'. $PopUpFad_pluginurl . 'PopUpFad.css" />';
-	$PopUpFad_txt = $PopUpFad_txt . '<div id="PopUpFad">';
-  		$PopUpFad_txt = $PopUpFad_txt . '<div class="PopUpFadClose"><a href="#" onclick="PopUpFadCloseX()"><img src="'. $PopUpFad_close . '" /></a></div>';
-  			$PopUpFad_txt = $PopUpFad_txt . '<div>';
-				$PopUpFad_txt = $PopUpFad_txt . $PopUpData;
-			$PopUpFad_txt = $PopUpFad_txt . '</div>';
-		$PopUpFad_txt = $PopUpFad_txt . '</div>';
-	$PopUpFad_txt = $PopUpFad_txt . '<script type="text/javascript">';
-	$PopUpFad_txt = $PopUpFad_txt." setTimeout('PopUpFadOpen()', ".$PopUpFad_Timeout.");";
-	$PopUpFad_txt = $PopUpFad_txt.'</script>';
-	
-	if($PopUpFad_session == "NO")
-	{
-		return $PopUpFad_txt;
-	}
-	else
-	{
-		if ( isset($_SESSION['PopUpFad_Session']) <> "YES" )
+		if(!is_numeric($PopUpFad_Timeout)) 
+		{ 
+			$PopUpFad_Timeout = 3000;
+		}
+		elseif($PopUpFad_Timeout == 0)
 		{
-			$_SESSION['PopUpFad_Session'] = "YES"; 
+			$PopUpFad_Timeout = 3000;
+		}
+		
+		$PopUpFad_siteurl = get_option('siteurl');
+		$PopUpFad_pluginurl = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/";
+		$PopUpFad_close = $PopUpFad_siteurl . "/wp-content/plugins/cool-fade-popup/close.jpg";
+		
+		$PopUpFad_txt = $PopUpFad_txt . '<script type="text/javascript" src="'. $PopUpFad_pluginurl . 'PopUpFad.js"></script>';
+		$PopUpFad_txt = $PopUpFad_txt . '<link rel="stylesheet" type="text/css" href="'. $PopUpFad_pluginurl . 'PopUpFad.css" />';
+		$PopUpFad_txt = $PopUpFad_txt . '<div id="PopUpFad">';
+			$PopUpFad_txt = $PopUpFad_txt . '<div class="PopUpFadClose"><a href="#" onclick="PopUpFadCloseX()"><img src="'. $PopUpFad_close . '" /></a></div>';
+				$PopUpFad_txt = $PopUpFad_txt . '<div>';
+					$PopUpFad_txt = $PopUpFad_txt . $PopUpData;
+				$PopUpFad_txt = $PopUpFad_txt . '</div>';
+			$PopUpFad_txt = $PopUpFad_txt . '</div>';
+		$PopUpFad_txt = $PopUpFad_txt . '<script type="text/javascript">';
+		$PopUpFad_txt = $PopUpFad_txt." setTimeout('PopUpFadOpen()', ".$PopUpFad_Timeout.");";
+		$PopUpFad_txt = $PopUpFad_txt.'</script>';
+		
+		if($PopUpFad_session == "NO")
+		{
 			return $PopUpFad_txt;
 		}
+		else
+		{
+			if ( isset($_SESSION['PopUpFad_Session']) <> "YES" )
+			{
+				$_SESSION['PopUpFad_Session'] = "YES"; 
+				return $PopUpFad_txt;
+			}
+		}
+
+	}
+	else
+	{
+		$PopUpFad_nopopup = get_option('PopUpFad_nopopup');
+		$PopUpFad_txt = $PopUpFad_nopopup;
+		return $PopUpFad_txt;
 	}
 }
 

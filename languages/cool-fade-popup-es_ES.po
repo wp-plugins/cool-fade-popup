@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cool fade popup plugin 8.0\n"
-"POT-Creation-Date: 2014-04-18 10:45+0800\n"
-"PO-Revision-Date: 2014-04-18 10:45+0800\n"
+"POT-Creation-Date: 2014-08-03 14:02+0800\n"
+"PO-Revision-Date: 2014-08-03 14:02+0800\n"
 "Last-Translator: \n"
 "Language-Team: gopiplus <gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,101 +13,113 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../cool-fade-popup.php:146 ../cool-fade-popup.php:191
-#: ../pages/content-management-add.php:80
-#: ../pages/content-management-edit.php:103
+#: ../cool-fade-popup.php:149 ../cool-fade-popup.php:194
+#: ../pages/content-management-add.php:83
+#: ../pages/content-management-edit.php:106
 #: ../pages/content-management-show.php:52 ../pages/widget-setting.php:6
 msgid "Cool fade popup"
 msgstr "Cool fade popup"
 
-#: ../cool-fade-popup.php:193 ../pages/content-management-add.php:145
-#: ../pages/content-management-edit.php:176
-#: ../pages/content-management-show.php:149 ../pages/widget-setting.php:131
+#: ../cool-fade-popup.php:196 ../pages/content-management-add.php:154
+#: ../pages/content-management-edit.php:185
+#: ../pages/content-management-show.php:152 ../pages/widget-setting.php:138
 msgid "Check official website for more information"
 msgstr "Revise el sitio web oficial para más información"
 
-#: ../cool-fade-popup.php:194 ../pages/content-management-add.php:146
-#: ../pages/content-management-edit.php:177
-#: ../pages/content-management-show.php:150 ../pages/widget-setting.php:132
+#: ../cool-fade-popup.php:197 ../pages/content-management-add.php:155
+#: ../pages/content-management-edit.php:186
+#: ../pages/content-management-show.php:153 ../pages/widget-setting.php:139
 msgid "click here"
 msgstr "Haga clic aquí"
 
-#: ../pages/content-management-add.php:26
-#: ../pages/content-management-edit.php:54
+#: ../pages/content-management-add.php:27
+#: ../pages/content-management-edit.php:55
 msgid "Please enter the popup message."
 msgstr "Por favor ingrese el mensaje emergente"
 
-#: ../pages/content-management-add.php:45
+#: ../pages/content-management-add.php:47
 msgid "New details was successfully added."
 msgstr "Los nuevos detalles se añadieron exitosamente"
 
-#: ../pages/content-management-add.php:71
-#: ../pages/content-management-edit.php:94
+#: ../pages/content-management-add.php:74
+#: ../pages/content-management-edit.php:97
 msgid "Click here"
 msgstr "Haga clic aquí"
 
-#: ../pages/content-management-add.php:72
-#: ../pages/content-management-edit.php:95
+#: ../pages/content-management-add.php:75
+#: ../pages/content-management-edit.php:98
 msgid " to view the details"
 msgstr "Para ver los detalles"
 
-#: ../pages/content-management-add.php:82
+#: ../pages/content-management-add.php:85
 msgid "Add new popup details"
 msgstr "Añadir nuevos detalles emergentes"
 
-#: ../pages/content-management-add.php:83
-#: ../pages/content-management-edit.php:106
+#: ../pages/content-management-add.php:86
+#: ../pages/content-management-edit.php:109
 msgid "Enter the popup message"
 msgstr "Ingrese el mensaje emergente"
 
-#: ../pages/content-management-add.php:85
-#: ../pages/content-management-edit.php:108
+#: ../pages/content-management-add.php:88
+#: ../pages/content-management-edit.php:111
 msgid "We Can enter HTML content also"
 msgstr "También podemos ingresar contenido HTML"
 
-#: ../pages/content-management-add.php:86
-#: ../pages/content-management-edit.php:109
+#: ../pages/content-management-add.php:89
+#: ../pages/content-management-edit.php:112
 msgid "Select popup group"
 msgstr "Seleccionar grupo emergente"
 
-#: ../pages/content-management-add.php:112
-#: ../pages/content-management-edit.php:143
+#: ../pages/content-management-add.php:115
+#: ../pages/content-management-edit.php:146
 msgid "This is to group the popup message. Select your popup group."
 msgstr ""
 "Esto es para agrupar el mensaje emergente. Seleccione su grupo emergente."
 
-#: ../pages/content-management-add.php:113
-#: ../pages/content-management-edit.php:144
+#: ../pages/content-management-add.php:116
+#: ../pages/content-management-edit.php:147
 msgid "Display status"
 msgstr "Mostrar estado"
 
-#: ../pages/content-management-add.php:119
-#: ../pages/content-management-edit.php:150
+#: ../pages/content-management-add.php:122
+#: ../pages/content-management-edit.php:153
 msgid "Do you want to show this message into the popup window"
 msgstr "¿Desea mostrar este mensaje dentro de la ventana emergente?"
 
-#: ../pages/content-management-add.php:121
-#: ../pages/content-management-edit.php:152
+#: ../pages/content-management-add.php:124
+#: ../pages/content-management-edit.php:155
 msgid "Popup timeout"
 msgstr "Tiempo de apagado del mensaje emergente"
 
-#: ../pages/content-management-add.php:132
-#: ../pages/content-management-edit.php:163
+#: ../pages/content-management-add.php:137
+#: ../pages/content-management-edit.php:168
 msgid "Please select your popup timeout."
 msgstr "Por favor seleccione su tiempo de apagado del mensaje emergente"
 
-#: ../pages/content-management-add.php:137
+#: ../pages/content-management-add.php:139
+#: ../pages/content-management-edit.php:170
+msgid "Expiration date"
+msgstr ""
+
+#: ../pages/content-management-add.php:141
+#: ../pages/content-management-edit.php:172
+msgid ""
+"Please enter the expiration date in this format YYYY-MM-DD <br /> "
+"9999-12-31 : Is equal to no expire."
+msgstr ""
+
+#: ../pages/content-management-add.php:146
 msgid "Insert Details"
 msgstr "Inserte detalles"
 
-#: ../pages/content-management-add.php:138
-#: ../pages/content-management-edit.php:169 ../pages/widget-setting.php:124
+#: ../pages/content-management-add.php:147
+#: ../pages/content-management-edit.php:178 ../pages/widget-setting.php:131
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../pages/content-management-add.php:139
-#: ../pages/content-management-edit.php:170
-#: ../pages/content-management-show.php:139 ../pages/widget-setting.php:125
+#: ../pages/content-management-add.php:148
+#: ../pages/content-management-edit.php:179
+#: ../pages/content-management-show.php:142 ../pages/widget-setting.php:132
 msgid "Help"
 msgstr "Ayuda"
 
@@ -116,15 +128,15 @@ msgstr "Ayuda"
 msgid "Oops, selected details doesnt exist"
 msgstr "Oops, no existen detalles seleccionados"
 
-#: ../pages/content-management-edit.php:77
+#: ../pages/content-management-edit.php:80
 msgid "Details was successfully updated."
 msgstr "Los detalles se actualizaron exitosamente"
 
-#: ../pages/content-management-edit.php:105
+#: ../pages/content-management-edit.php:108
 msgid "Update popup details"
 msgstr "Actualizar detalles emergentes"
 
-#: ../pages/content-management-edit.php:168
+#: ../pages/content-management-edit.php:177
 msgid "Update Details"
 msgstr "Actualizar Detalles"
 
@@ -133,134 +145,149 @@ msgid "Selected record was successfully deleted."
 msgstr "El registro seleccionado fue eliminado exitosamente"
 
 #: ../pages/content-management-show.php:53
-#: ../pages/content-management-show.php:137
+#: ../pages/content-management-show.php:140
 msgid "Add New"
 msgstr "Añadir Nuevo"
 
 #: ../pages/content-management-show.php:74
-#: ../pages/content-management-show.php:82
+#: ../pages/content-management-show.php:83
 msgid "Popup Content"
 msgstr "Contenido Emergente"
 
 #: ../pages/content-management-show.php:75
-#: ../pages/content-management-show.php:83
-msgid "Popup Group"
-msgstr "Grupo Emergente"
+#: ../pages/content-management-show.php:84
+msgid "Group"
+msgstr ""
 
 #: ../pages/content-management-show.php:76
-#: ../pages/content-management-show.php:84
+#: ../pages/content-management-show.php:85
 msgid "Display"
 msgstr "Mostrar"
 
-#: ../pages/content-management-show.php:101
+#: ../pages/content-management-show.php:77
+#: ../pages/content-management-show.php:86
+msgid "Expiration"
+msgstr ""
+
+#: ../pages/content-management-show.php:103
 msgid "Edit"
 msgstr "Editar"
 
-#: ../pages/content-management-show.php:103
+#: ../pages/content-management-show.php:105
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../pages/content-management-show.php:115
+#: ../pages/content-management-show.php:118
 msgid "No records available."
 msgstr "No hay registros disponibles"
 
-#: ../pages/content-management-show.php:126
+#: ../pages/content-management-show.php:129
 msgid " &lt;&lt; "
 msgstr "&lt;&lt;"
 
-#: ../pages/content-management-show.php:127
+#: ../pages/content-management-show.php:130
 msgid " &gt;&gt; "
 msgstr "&gt;&gt;"
 
-#: ../pages/content-management-show.php:138 ../pages/widget-setting.php:7
+#: ../pages/content-management-show.php:141 ../pages/widget-setting.php:7
 msgid "Widget setting"
 msgstr "Configuración del Widget"
 
-#: ../pages/content-management-show.php:142
+#: ../pages/content-management-show.php:145
 msgid "Plugin configuration option"
 msgstr "Opción de configuración del Plugin"
 
-#: ../pages/content-management-show.php:144
+#: ../pages/content-management-show.php:147
 msgid "Add the plugin in the posts or pages using short code."
 msgstr "Añadir el plugin en las publicaciones o páginas usando código corto"
 
-#: ../pages/content-management-show.php:145
+#: ../pages/content-management-show.php:148
 msgid "Add directly in to the theme using PHP code."
 msgstr "Añadir directamente en el tema usando código PHP"
 
-#: ../pages/content-management-show.php:146
+#: ../pages/content-management-show.php:149
 msgid "Drag and drop the widget to your sidebar."
 msgstr "Arrastre y suelte el widget a su barra lateral"
 
-#: ../pages/widget-setting.php:46
+#: ../pages/widget-setting.php:49
 msgid "Details successfully updated."
 msgstr "Detalles  actualizados exitosamente"
 
-#: ../pages/widget-setting.php:54
+#: ../pages/widget-setting.php:57
 msgid "Enter widget title"
 msgstr "Ingrese título del widget"
 
-#: ../pages/widget-setting.php:56
+#: ../pages/widget-setting.php:59
 msgid "Enter widget title, Only for widget."
 msgstr "Ingrese título del widget. Sólo para el widget."
 
-#: ../pages/widget-setting.php:58
+#: ../pages/widget-setting.php:61
 msgid "Popup on home page"
 msgstr "Emergente en la página principal"
 
-#: ../pages/widget-setting.php:60
+#: ../pages/widget-setting.php:63
 msgid "Enter YES (or) NO, This option is to display the popup on home page."
 msgstr ""
 "Ingrese SÍ (o) NO, Esta opción es para mostrar el emergente en la página "
 "principal."
 
-#: ../pages/widget-setting.php:62
+#: ../pages/widget-setting.php:65
 msgid "Popup on wp posts"
 msgstr "Emergente en publicaciones wp"
 
-#: ../pages/widget-setting.php:64
+#: ../pages/widget-setting.php:67
 msgid "Enter YES (or) NO, This option is to display the popup on wp posts"
 msgstr ""
 "Ingrese SÍ (o) NO, Esta opción es para mostrar el emergente en publicaciones "
 "wp."
 
-#: ../pages/widget-setting.php:66
+#: ../pages/widget-setting.php:69
 msgid "Popup on wp pages"
 msgstr "Emergente en páginas wp"
 
-#: ../pages/widget-setting.php:68
+#: ../pages/widget-setting.php:71
 msgid "Enter YES (or) NO, This option is to display the popup on wp pages"
 msgstr ""
 "Ingrese SÍ (o) NO, Esta opción es para mostrar el emergente en publicaciones "
 "wp."
 
-#: ../pages/widget-setting.php:70
+#: ../pages/widget-setting.php:73
 msgid "Popup on wp archives"
 msgstr "Emergente en archivos wp"
 
-#: ../pages/widget-setting.php:72 ../pages/widget-setting.php:76
+#: ../pages/widget-setting.php:75 ../pages/widget-setting.php:79
 msgid "Enter YES (or) NO"
 msgstr "Ingrese SÍ (o) NO"
 
-#: ../pages/widget-setting.php:74
+#: ../pages/widget-setting.php:77
 msgid "Popup on wp search"
 msgstr "Emergente en búsqueda wp"
 
-#: ../pages/widget-setting.php:78
+#: ../pages/widget-setting.php:81
 msgid "Select your popup group"
 msgstr "Seleccione su grupo emergente"
 
-#: ../pages/widget-setting.php:112
+#: ../pages/widget-setting.php:115
 msgid "Select your group name to display the popup message for widget."
 msgstr ""
 "Seleccione el nombre de su grupo para mostrar el mensaje emergente para "
 "widget."
 
-#: ../pages/widget-setting.php:114
+#: ../pages/widget-setting.php:117
+msgid "Enable Random Option"
+msgstr "Habilitar Opción Aleatoria"
+
+#: ../pages/widget-setting.php:119
+msgid "Enter YES (or) NO, This is to display popup message randomly"
+msgstr ""
+"Ingrese SÍ (o) NO, Esta opción es para mostrar el mensaje emergente "
+"aleatoriamente"
+
+#: ../pages/widget-setting.php:121
 msgid "Enable Popup Session (Global Setting)"
 msgstr "Habilitar Sesión Emergente"
 
-#: ../pages/widget-setting.php:116
+#: ../pages/widget-setting.php:123
 msgid ""
 "Enter YES (or) NO, This is to display popup once per session, <br />YES = "
 "Display popup once per session."
@@ -268,16 +295,14 @@ msgstr ""
 "Ingrese SÍ (o) NO, Esta opción es para mostrar el emergente una vez por "
 "sesión, <br/>SÍ=Mostrar emergente una vez por sesión."
 
-#: ../pages/widget-setting.php:118
-msgid "Enable Random Option"
-msgstr "Habilitar Opción Aleatoria"
-
-#: ../pages/widget-setting.php:120
-msgid "Enter YES (or) NO, This is to display popup message randomly"
+#: ../pages/widget-setting.php:125
+msgid "No popup text (Global Setting)"
 msgstr ""
-"Ingrese SÍ (o) NO, Esta opción es para mostrar el mensaje emergente "
-"aleatoriamente"
 
-#: ../pages/widget-setting.php:123
+#: ../pages/widget-setting.php:127
+msgid "This text will be display, if no popup available or all popup expired."
+msgstr ""
+
+#: ../pages/widget-setting.php:130
 msgid "Submit"
 msgstr "Enviar"
