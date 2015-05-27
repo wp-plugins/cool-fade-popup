@@ -4,7 +4,7 @@ Plugin Name: Cool fade popup
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Description: Sometimes its useful to add a pop up to your website to show your ads, special announcement and for offers. Using this plug-in you can creates unblockable, dynamic and fully configurable popups for your blog.
 Author: Gopi Ramasamy
-Version: 8.5
+Version: 8.6
 Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Donate link: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 License: GPLv2 or later
