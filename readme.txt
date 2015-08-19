@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Plugin URI: http://www.gopiplus.com/work/2011/01/08/cool-fade-popup/
 Tags: popup, popups, announcement, offers, unblockable, ads, advertising tool, advertisment, cool, fade in
 Requires at least: 3.4
-Tested up to: 4.2.2
-Stable tag: 8.6
+Tested up to: 4.3
+Stable tag: 8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -155,6 +155,11 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 
 1. Tested up to 4.2.2
 
+= 8.7 =
+
+1. Tested up to 4.3
+2. Little enhancement in the JS file for popup window position.
+
 == Upgrade Notice ==
 
 = 1.0 = 								
@@ -234,3 +239,8 @@ Plugin *.po file (cool-fade-popup.po) available in the languages folder. Transla
 = 8.6 =
 
 1. Tested up to 4.2.2
+
+= 8.7 =
+
+1. Tested up to 4.3
+2. Little enhancement in the JS file for popup window position.

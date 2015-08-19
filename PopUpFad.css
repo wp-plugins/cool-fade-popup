@@ -36,3 +36,9 @@
 #PopUpFad.show {
 	display: block;
 }
+
+#PopUpFad p {
+	text-decoration: none;
+	border: none;
+	font-size: 10px;
+}

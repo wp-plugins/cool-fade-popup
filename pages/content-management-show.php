@@ -4,6 +4,7 @@
 if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	if(!is_numeric($did)) { die('<p>Are you sure you want to do this?</p>'); }
 	
 	$PopUpFad_success = '';
 	$PopUpFad_success_msg = FALSE;
@@ -70,7 +71,7 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th width="3%" class="check-column" scope="col"><input type="checkbox" name="PopUpFad_group_item[]" /></th>
+            <th style="padding: 8px 2px;" class="check-column" scope="col"><input type="checkbox" name="PopUpFad_group_item[]" /></th>
 			<th width="72%" scope="col"><?php _e('Popup Content', 'cool-fade-popup'); ?></th>
             <th scope="col"><?php _e('Group', 'cool-fade-popup'); ?></th>
 			<th scope="col"><?php _e('Display', 'cool-fade-popup'); ?></th>
@@ -79,7 +80,7 @@ if (isset($_POST['frm_PopUpFad_display']) && $_POST['frm_PopUpFad_display'] == '
         </thead>
 		<tfoot>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="PopUpFad_group_item[]" /></th>
+            <th class="check-column" scope="col" style="padding: 8px 2px;"><input type="checkbox" name="PopUpFad_group_item[]" /></th>
 			<th scope="col"><?php _e('Popup Content', 'cool-fade-popup'); ?></th>
             <th scope="col"><?php _e('Group', 'cool-fade-popup'); ?></th>
 			<th scope="col"><?php _e('Display', 'cool-fade-popup'); ?></th>

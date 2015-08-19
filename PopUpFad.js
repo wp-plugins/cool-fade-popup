@@ -54,11 +54,12 @@ function PopUpFad() {
 
 function PopUpFadLft() {
 	var w = 160;	// set this to 1/2 the width of the PopUpFad div defined in the style sheet 
-					// there's not a reliable way to retrieve an element's width via javascript!!
-					
+					// there's not a reliable way to retrieve an element's width via javascript!!		
 	var l = (document.body.innerWidth)? document.body.innerWidth / 2:document.body.offsetWidth / 2;
-
-	obj.style.left = (l - w)+"px";
+	var left = (l / 2) - w;
+	obj.style.left = left+"px";
+	//obj.style.left = (l - w)+"px"; // This value to be modified to change the position for your theme.
+	//obj.style.left = "100px"; // This value to be modified to change the position for your theme.
 }
 
 function PopUpFadObj() {
